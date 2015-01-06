@@ -91,6 +91,6 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="main.cpp"/>
+    <File Name="dfs.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
