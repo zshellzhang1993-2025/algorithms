@@ -1,5 +1,4 @@
 #include<iostream>
-using namespace std;
 
 #define N 5
 
@@ -55,10 +54,11 @@ public:
 				connector++;
 				explore(i);
 		}
+		std::cout<<endl;
 	}
 private:
 	void explore(int v){
-		cout<<' '<<vertex[v].getName();
+		std::cout<<' '<<vertex[v].getName();
 		visited[v]=true;
 		vertex[v].setConnector(connector);
 		clock++;

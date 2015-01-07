@@ -1,0 +1,36 @@
+#include <iostream>
+
+void merge(int a[],int start1,int start2,int end){
+	int temp[end-start1+1]=new int[end-start1+1];
+	int i=0;
+	int s1=start1,s2=start2,e1=start2-1,e2=end;
+	while(s1<e1 && s2<e2){
+		if(a[s1]<a[s2])
+			temp[i++]=a[s1++];
+		else
+			temp[i++]=a[s2++];
+	}
+	while(s1<e1)
+		temp[i++]=a[s1++];
+	while(s2<e2)
+		temp[i++]=a[s2++];
+	for(int i=start;i<end;i++)
+		a[i]=temp[i];
+}
+
+void mergeSort(int a[],int start,int end){
+	if(end-start==0)
+		return;
+	else{
+		int start2=(end-start)/2+start;
+		mergeSort(a,start,start2);
+		mergeSort(a,start2+1,end);
+		merge(a,start,start2,end);
+	}
+}
+
+int main()
+{
+	
+	return 0;
+}
