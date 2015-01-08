@@ -3,4 +3,7 @@
   <SubversionPath>
     <![CDATA[F:\南京师范大学\计算机学院\Algorithms\Algorithms]]>
   </SubversionPath>
+  <FindInFilesMask>
+    <![CDATA[*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.inc;*.mm;*.m;*.xrc;*.xml]]>
+  </FindInFilesMask>
 </Workspace>

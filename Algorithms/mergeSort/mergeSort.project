@@ -91,6 +91,6 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="mergeSort"/>
+    <File Name="mergeSort.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
