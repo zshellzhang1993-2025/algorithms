@@ -3,17 +3,17 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=structureOfGraph
+ProjectName            :=matrixLinkMultiplication
 ConfigurationName      :=Debug
 WorkspacePath          := "F:\Nanjing Normal University\CS\Algorithms\Algorithms"
-ProjectPath            := "F:\Nanjing Normal University\CS\Algorithms\Algorithms\construction_of_a_graph"
+ProjectPath            := "F:\Nanjing Normal University\CS\Algorithms\Algorithms\matrixLinkMultiplication"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Zhi
-Date                   :=01/08/15
+Date                   :=01/12/15
 CodeLitePath           :="C:\Program Files (x86)\CodeLite"
 LinkerName             :=C:/MinGW-4.8.1/bin/g++.exe 
 SharedObjectLinkerName :=C:/MinGW-4.8.1/bin/g++.exe -shared -fPIC
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="structureOfGraph.txt"
+ObjectsFileList        :="matrixLinkMultiplication.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
@@ -63,7 +63,7 @@ AS       := C:/MinGW-4.8.1/bin/as.exe
 ##
 CodeLiteDir:=C:\Program Files (x86)\CodeLite
 UNIT_TEST_PP_SRC_DIR:=C:\UnitTest++-1.3
-Objects0=$(IntermediateDirectory)/dfs.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/matrixLink.cpp$(ObjectSuffix) 
 
 
 
@@ -90,13 +90,13 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/dfs.cpp$(ObjectSuffix): dfs.cpp $(IntermediateDirectory)/dfs.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Nanjing Normal University/CS/Algorithms/Algorithms/construction_of_a_graph/dfs.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/dfs.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/dfs.cpp$(DependSuffix): dfs.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/dfs.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/dfs.cpp$(DependSuffix) -MM "dfs.cpp"
+$(IntermediateDirectory)/matrixLink.cpp$(ObjectSuffix): matrixLink.cpp $(IntermediateDirectory)/matrixLink.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Nanjing Normal University/CS/Algorithms/Algorithms/matrixLinkMultiplication/matrixLink.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/matrixLink.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/matrixLink.cpp$(DependSuffix): matrixLink.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/matrixLink.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/matrixLink.cpp$(DependSuffix) -MM "matrixLink.cpp"
 
-$(IntermediateDirectory)/dfs.cpp$(PreprocessSuffix): dfs.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/dfs.cpp$(PreprocessSuffix) "dfs.cpp"
+$(IntermediateDirectory)/matrixLink.cpp$(PreprocessSuffix): matrixLink.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/matrixLink.cpp$(PreprocessSuffix) "matrixLink.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
@@ -108,6 +108,6 @@ clean:
 	$(RM) ./Debug/*$(DependSuffix)
 	$(RM) $(OutputFile)
 	$(RM) $(OutputFile).exe
-	$(RM) "../.build-debug/structureOfGraph"
+	$(RM) "../.build-debug/matrixLinkMultiplication"
 
 

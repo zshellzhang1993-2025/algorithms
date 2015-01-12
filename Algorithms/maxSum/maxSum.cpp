@@ -1,6 +1,6 @@
 #include <iostream>
 
-int maxSum(int v[], int n, int& left, int& right)
+int maxSum(int v[], int n, int &left, int &right)
 {
     int start = 0;  	// the start index of a probably sequence
     int now = 0;        // the current sequence which has been selected
@@ -26,8 +26,9 @@ int main()
 {
 	int left = 0;
 	int right = 0;
-	int v[10] = {5,15,-30,10,-5,40,10,-10,-2,15};
-	std::cout << "maxSum=" << maxSum(v,10,left,right) << "\tfrom "
-			  << left << " to" << right << std::endl;
+	int v[10] = {5,15,-30,10,-5,40,10};
+	int max = maxSum(v,7,left,right);
+	std::cout << "maxSum=" << max << "\tfrom "
+			  << left << " to " << right << std::endl;
     return 0;
 }

@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ maxSum - Debug ]----------"
-	@cd "maxSum" && $(MAKE) -f  "maxSum.mk"
+	@echo "----------Building project:[ matrixLinkMultiplication - Debug ]----------"
+	@cd "matrixLinkMultiplication" && $(MAKE) -f  "matrixLinkMultiplication.mk"
 clean:
-	@echo "----------Cleaning project:[ maxSum - Debug ]----------"
-	@cd "maxSum" && $(MAKE) -f  "maxSum.mk" clean
+	@echo "----------Cleaning project:[ matrixLinkMultiplication - Debug ]----------"
+	@cd "matrixLinkMultiplication" && $(MAKE) -f  "matrixLinkMultiplication.mk" clean

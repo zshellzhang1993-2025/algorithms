@@ -5,8 +5,8 @@
 ## Debug
 ProjectName            :=mergeSort
 ConfigurationName      :=Debug
-WorkspacePath          := "F:\南京师范大学\计算机学院\Algorithms\Algorithms"
-ProjectPath            := "F:\南京师范大学\计算机学院\Algorithms\Algorithms\mergeSort"
+WorkspacePath          := "F:\Nanjing Normal University\CS\Algorithms\Algorithms"
+ProjectPath            := "F:\Nanjing Normal University\CS\Algorithms\Algorithms\mergeSort"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -91,7 +91,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/mergeSort.cpp$(ObjectSuffix): mergeSort.cpp $(IntermediateDirectory)/mergeSort.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/南京师范大学/计算机学院/Algorithms/Algorithms/mergeSort/mergeSort.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/mergeSort.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Nanjing Normal University/CS/Algorithms/Algorithms/mergeSort/mergeSort.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/mergeSort.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/mergeSort.cpp$(DependSuffix): mergeSort.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/mergeSort.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/mergeSort.cpp$(DependSuffix) -MM "mergeSort.cpp"
 

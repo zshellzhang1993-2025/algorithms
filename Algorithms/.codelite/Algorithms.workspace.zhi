@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace>
-  <SubversionPath>
-    <![CDATA[F:\南京师范大学\计算机学院\Algorithms\Algorithms]]>
-  </SubversionPath>
   <FindInFilesMask>
     <![CDATA[*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.inc;*.mm;*.m;*.xrc;*.xml]]>
   </FindInFilesMask>
+  <SubversionPath>
+    <![CDATA[F:\南京师范大学\计算机学院\Algorithms\Algorithms]]>
+  </SubversionPath>
 </Workspace>

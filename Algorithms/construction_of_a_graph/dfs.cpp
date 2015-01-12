@@ -30,7 +30,7 @@ private:
 	int postClock;
 	int connector;
 	char name;
-}
+};
 
 class Graph{
 public:
@@ -45,16 +45,15 @@ public:
 				this->arc[i][j]=arc[i][j];
 			}
 	}
-	int DFS(){
+	void DFS(){
 		for(int i=0;i<N;i++)
 			visited[i]=false;
-		int count=0;
 		for(int i=0;i<N;i++){
 			if(visited[i]==false)
 				connector++;
 				explore(i);
 		}
-		std::cout<<endl;
+		std::cout<<std::endl;
 	}
 private:
 	void explore(int v){
@@ -72,12 +71,13 @@ private:
 	void postVisit(int v){
 		vertex[v].Clock(clock);
 	}
+private:
 	Vertex vertex[N];
 	bool visited[N];
 	int arc[N][N];
 	int clock;
 	int connector;
-}
+};
 
 int main(){
 	try{

@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=maxSum
 ConfigurationName      :=Debug
-WorkspacePath          := "F:\南京师范大学\计算机学院\Algorithms\Algorithms"
-ProjectPath            := "F:\南京师范大学\计算机学院\Algorithms\Algorithms\maxSum"
+WorkspacePath          := "F:\Nanjing Normal University\CS\Algorithms\Algorithms"
+ProjectPath            := "F:\Nanjing Normal University\CS\Algorithms\Algorithms\maxSum"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Zhi
-Date                   :=01/08/15
+Date                   :=01/09/15
 CodeLitePath           :="C:\Program Files (x86)\CodeLite"
 LinkerName             :=C:/MinGW-4.8.1/bin/g++.exe 
 SharedObjectLinkerName :=C:/MinGW-4.8.1/bin/g++.exe -shared -fPIC
@@ -91,7 +91,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/maxSum.cpp$(ObjectSuffix): maxSum.cpp $(IntermediateDirectory)/maxSum.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/南京师范大学/计算机学院/Algorithms/Algorithms/maxSum/maxSum.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/maxSum.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Nanjing Normal University/CS/Algorithms/Algorithms/maxSum/maxSum.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/maxSum.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/maxSum.cpp$(DependSuffix): maxSum.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/maxSum.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/maxSum.cpp$(DependSuffix) -MM "maxSum.cpp"
 
