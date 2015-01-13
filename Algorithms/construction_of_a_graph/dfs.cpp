@@ -1,6 +1,5 @@
-#include<iostream>
-
-#define N 5
+#include <iostream>
+#include <stdlib.h>
 
 class Vertex{
 public:
@@ -11,7 +10,10 @@ public:
 	char getName(){
 		return name;
 	}
-	void Clock(int clock){
+	void setName(char name){
+		this->name=name;
+	}
+	void setClock(int clock){
 		this->postClock=clock;
 	}
 	int getClock(){
@@ -32,51 +34,87 @@ private:
 	char name;
 };
 
+int compare(const void *a,const void *b){
+	Vertex *pa = (Vertex*)a;
+	Vertex *pb = (Vertex*)b;
+	return pb->getClock() - pa->getClock();
+}
+
 class Graph{
 public:
 	Graph(){}
-	Graph(int arc[N][N]){
-		clock=0;
-		for(int i=0;i<N;i++){
+	Graph(int **arc, Vertex *vertex, int n){
+		this->connector=0;
+		this->clock=0;
+		this->num=n;
+		this->vertex=new Vertex[n];
+		for(int i=0;i<num;i++)
+			this->vertex[i].setName(vertex[i].getName());
+		this->visited=new bool[n];
+		for(int i=0;i<num;i++){
 			visited[i]=false;
 		}
-		for(int i=0;i<N;i++)
-			for(int j=0;j<N;j++){
+		this->arc=new int*[num];
+		for(int i=0;i<num;i++)
+			this->arc[i]=new int[num];
+		for(int i=0;i<num;i++)
+			for(int j=0;j<num;j++){
 				this->arc[i][j]=arc[i][j];
 			}
 	}
-	void DFS(){
-		for(int i=0;i<N;i++)
+	~Graph(){
+		delete[] vertex;
+		delete[] visited;
+		for(int i=0;i<num;i++)
+			delete[] *(arc + i);
+	}
+	void DFS(bool printVertex){									//depth first search
+		for(int i=0;i<num;i++)
 			visited[i]=false;
-		for(int i=0;i<N;i++){
+		for(int i=0;i<num;i++){
 			if(visited[i]==false)
 				connector++;
-				explore(i);
+				explore(i,printVertex);
 		}
-		std::cout<<std::endl;
+		if(printVertex)
+			std::cout << std::endl;
 	}
+	int Linearize(){
+		DFS(false);
+		Vertex *t_vertex=new Vertex[num];
+		for(int i=0;i<num;i++){
+			t_vertex[i].setClock(vertex[i].getClock());
+			t_vertex[i].setName(vertex[i].getName());
+		}
+		qsort(t_vertex,num,sizeof(Vertex),compare);				//use the quickSort provided by system
+		for(int i=0;i<num;i++)
+			std::cout << ' ' << t_vertex[i].getName();
+	}
+	
 private:
-	void explore(int v){
-		std::cout<<' '<<vertex[v].getName();
+	void explore(int v,bool printVertex){
+		if(printVertex)
+			std::cout << ' ' << vertex[v].getName();
 		visited[v]=true;
 		vertex[v].setConnector(connector);
 		clock++;
-		for(int i=0;i<N;i++){
+		for(int i=0;i<num;i++){
 			if(arc[v][i]==1 && visited[i]==false)
-				explore(i);
+				explore(i,printVertex);
 		}
 		clock++;
 		postVisit(v);
 	}
 	void postVisit(int v){
-		vertex[v].Clock(clock);
+		vertex[v].setClock(clock);
 	}
 private:
-	Vertex vertex[N];
-	bool visited[N];
-	int arc[N][N];
+	Vertex *vertex;
+	bool *visited;
+	int **arc;
 	int clock;
 	int connector;
+	int num;
 };
 
 int main(){

@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ matrixLinkMultiplication - Debug ]----------"
-	@cd "matrixLinkMultiplication" && $(MAKE) -f  "matrixLinkMultiplication.mk"
+	@echo "----------Building project:[ structureOfGraph - Debug ]----------"
+	@cd "construction_of_a_graph" && $(MAKE) -f  "structureOfGraph.mk"
 clean:
-	@echo "----------Cleaning project:[ matrixLinkMultiplication - Debug ]----------"
-	@cd "matrixLinkMultiplication" && $(MAKE) -f  "matrixLinkMultiplication.mk" clean
+	@echo "----------Cleaning project:[ structureOfGraph - Debug ]----------"
+	@cd "construction_of_a_graph" && $(MAKE) -f  "structureOfGraph.mk" clean
