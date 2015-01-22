@@ -2,25 +2,7 @@
 <Session Name="F:\Nanjing Normal University\CS\Algorithms\Algorithms\Algorithms.workspace">
   <int Value="0" Name="m_selectedTab"/>
   <wxString Value="F:\Nanjing Normal University\CS\Algorithms\Algorithms\Algorithms.workspace" Name="m_workspaceName"/>
-  <TabInfoArray Name="TabInfoArray">
-    <TabInfo>
-      <wxString Value="F:\Nanjing Normal University\CS\Algorithms\Algorithms\matrixLinkMultiplication\matrixLink.cpp" Name="FileName"/>
-      <int Value="6" Name="FirstVisibleLine"/>
-      <int Value="149" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds">
-        <IntVectorItem Value="2"/>
-        <IntVectorItem Value="4"/>
-        <IntVectorItem Value="11"/>
-        <IntVectorItem Value="23"/>
-        <IntVectorItem Value="57"/>
-        <IntVectorItem Value="92"/>
-        <IntVectorItem Value="95"/>
-        <IntVectorItem Value="106"/>
-        <IntVectorItem Value="119"/>
-      </IntVector>
-    </TabInfo>
-  </TabInfoArray>
+  <TabInfoArray Name="TabInfoArray"/>
   <SerializedObject Name="m_breakpoints">
     <long Value="0" Name="Count"/>
   </SerializedObject>

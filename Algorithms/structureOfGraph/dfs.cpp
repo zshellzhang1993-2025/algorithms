@@ -79,7 +79,7 @@ public:
 		if(printVertex)
 			std::cout << std::endl;
 	}
-	int Linearize(){
+	void Linearize(){
 		DFS(false);
 		Vertex *t_vertex=new Vertex[num];
 		for(int i=0;i<num;i++){
@@ -90,7 +90,6 @@ public:
 		for(int i=0;i<num;i++)
 			std::cout << ' ' << t_vertex[i].getName();
 	}
-	
 private:
 	void explore(int v,bool printVertex){
 		if(printVertex)
