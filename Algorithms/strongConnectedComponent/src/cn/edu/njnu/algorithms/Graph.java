@@ -12,16 +12,13 @@ public class Graph {
     private int connector;
     private int num;
 
-    public Graph() {
-    }
-
     public Graph(int[][] arc, Vertex[] vertex, int n) {
         this.connector = 0;
         this.clock = 0;
         this.num = n;
         this.vertex = new Vertex[n];
         for (int i = 0; i < num; i++)
-            this.vertex[i].setName(vertex[i].getName());
+            this.vertex[i] = new Vertex(vertex[i].getName());
         this.visited = new boolean[n];
         for (int i = 0; i < num; i++) {
             visited[i] = false;
@@ -35,39 +32,71 @@ public class Graph {
             }
     }
 
-    public void DFS(boolean printVertex) {                //depth first search
+    public void depthFirstSearch(boolean printVertex) {
+        Reset();
+        DFS(printVertex);
+    }
+
+    public void Linearize() {               //Linearization of directed acyclic graphs
+        Reset();
+        DFS(false);
+        Vertex[] t_vertex = new Vertex[num];
         for (int i = 0; i < num; i++) {
-            if (!visited[i])
+            t_vertex[i] = new Vertex();
+            t_vertex[i].setClock(vertex[i].getClock());
+            t_vertex[i].setName(vertex[i].getName());
+        }
+        Arrays.sort(t_vertex);
+        System.out.print("Linearize:");
+        for (int i = 0; i < num; i++)
+            System.out.print(" " + t_vertex[i].getName());
+        System.out.println();
+    }
+
+    public void outputConnector() {
+        HashSet<Vertex>[] set = new HashSet[connector];
+        for (int i = 0; i < set.length; i++)
+            set[i] = new HashSet<Vertex>();
+        for (Vertex v : vertex)
+            set[v.getConnector() - 1].add(v);
+        int offset = 0;
+        for (HashSet<Vertex> hs : set) {
+            offset++;
+            System.out.println("Connector" + offset + ":" + hs);
+        }
+    }
+
+    public StrongConnectedComponent getSCC() {
+        return new StrongConnectedComponent();
+    }
+
+    private void Reset() {
+        this.clock = 0;
+        this.connector = 0;
+        for (int i = 0; i < num; i++)
+            visited[i] = false;
+        for (int i = 0; i < num; i++) {
+            vertex[i].setClock(0);
+            vertex[i].setConnector(0);
+        }
+    }
+
+    private void DFS(boolean printVertex) {
+        if (printVertex)
+            System.out.print("DFS:");
+        for (int i = 0; i < num; i++) {
+            if (!visited[i]) {
                 connector++;
-            explore(i, printVertex);
+                explore(i, printVertex);
+            }
         }
         if (printVertex)
             System.out.println();
     }
 
-    public void Linearize() {
-        Reset();
-        DFS(false);
-        Vertex[] t_vertex = new Vertex[num];
-        for (int i = 0; i < num; i++) {
-            t_vertex[i].setClock(vertex[i].getClock());
-            t_vertex[i].setName(vertex[i].getName());
-        }
-        Arrays.sort(t_vertex);
-        for (int i = 0; i < num; i++)
-            System.out.print(' ' + t_vertex[i].getName());
-    }
-
-    public void Reset() {
-        this.clock = 0;
-        this.connector = 0;
-        for (int i = 0; i < num; i++)
-            visited[i] = false;
-    }
-
     private void explore(int v, boolean printVertex) {
         if (printVertex)
-            System.out.print(' ' + vertex[v].getName());
+            System.out.print(" " + vertex[v].getName());
         visited[v] = true;
         vertex[v].setConnector(connector);
         clock++;
@@ -81,10 +110,6 @@ public class Graph {
 
     private void postVisit(int v) {
         vertex[v].setClock(clock);
-    }
-
-    public StrongConnectedComponent getSCC() {
-        return new StrongConnectedComponent();
     }
 
     public class StrongConnectedComponent {
@@ -106,31 +131,46 @@ public class Graph {
         }
 
         public HashSet nextComponent() {
-            HashSet<Integer> set = new HashSet<Integer>();
-            for (int i = 0; i < num; i++)
-                visited[i] = false;
-            if (!explore(Linearize(), set))
+            HashSet<Vertex> set = new HashSet<Vertex>();
+            int v = Linearize();
+            if (v == -1)
                 return null;
+            System.arraycopy(deleted, 0, visited, 0, num);
+            explore(v, set);
             Object[] temp = set.toArray();
-            for (int element : set) {
-                int k = (Integer) temp[element];
+            for (int i = 0; i < temp.length; i++) {
+                Vertex vt = (Vertex) temp[i];
+                int k = (int) (vt.getName()) - 65;
                 deleted[k] = true;                      //delete the vertex of the SCC to be output
-                for (int i = 0; i < num; i++)
-                    arc[element][i] = 0;                //delete the edges which belong to the SCC
             }
             return set;
         }
 
-        private boolean explore(int v, HashSet<Integer> set) {
-            if (v == -1)
-                return false;
+        private void DFS() {
+            for (int i = 0; i < num; i++) {
+                if (!visited[i])
+                    explore(i);
+            }
+        }
+
+        private void explore(int v) {
             visited[v] = true;
-            set.add(v);
+            clock++;
             for (int i = 0; i < num; i++) {
                 if (arc[v][i] == 1 && !visited[i])
+                    explore(i);
+            }
+            clock++;
+            postVisit(v);
+        }
+
+        private void explore(int v, HashSet<Vertex> set) {
+            visited[v] = true;
+            set.add(vertex[v]);
+            for (int i = 0; i < num; i++) {
+                if (Graph.this.arc[v][i] == 1 && !visited[i])
                     explore(i, set);
             }
-            return true;
         }
 
         public void Reset() {
@@ -144,9 +184,10 @@ public class Graph {
 
         private int Linearize() {
             Graph.this.clock = 0;
-            Graph.this.connector = 0;
-            System.arraycopy(visited, 0, deleted, 0, num);
-            DFS(false);
+            for (int i = 0; i < num; i++)
+                Graph.this.vertex[i].setClock(0);
+            System.arraycopy(deleted, 0, visited, 0, num);
+            DFS();
             return Order();
         }
 
@@ -164,10 +205,10 @@ public class Graph {
             if (!flag)
                 return -1;
             int i = 0;
-            int temp = array[0];
-            while (i++ < num) {
-                if (temp < array[i])
-                    temp = array[i];
+            int temp = 0;
+            while (++i < num) {
+                if (array[temp] < array[i])
+                    temp = i;
             }
             return temp;
         }

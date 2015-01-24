@@ -1,7 +1,7 @@
 package cn.edu.njnu.algorithms;
 
 public class Vertex implements Comparable<Object> {
-    
+
     private int postClock;
     private int connector;
     private char name;
@@ -19,7 +19,13 @@ public class Vertex implements Comparable<Object> {
             return -1;
     }
 
-    public Vertex() {
+    @Override
+    public String toString() {
+        return "" + name;
+    }
+
+    public Vertex(){
+
     }
 
     public Vertex(char name) {
