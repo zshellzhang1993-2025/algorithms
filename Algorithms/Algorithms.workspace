@@ -2,9 +2,9 @@
 <CodeLite_Workspace Name="Algorithms" Database="">
   <Project Name="mergeSort" Path="mergeSort/mergeSort.project"/>
   <Project Name="maxSum" Path="maxSum/maxSum.project" Active="No"/>
-  <Project Name="matrixLinkMultiplication" Path="matrixLinkMultiplication/matrixLinkMultiplication.project" Active="Yes"/>
+  <Project Name="matrixLinkMultiplication" Path="matrixLinkMultiplication/matrixLinkMultiplication.project" Active="No"/>
   <Project Name="structureOfGraph" Path="structureOfGraph/structureOfGraph.project" Active="No"/>
-  <Project Name="1_TwoSum" Path="../Leetcode/1_TwoSum/1_TwoSum.project"/>
+  <Project Name="findMedianOfAnArray" Path="findMedianOfAnArray/findMedianOfAnArray.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Project Name="structureOfGraph" ConfigName="Debug"/>
@@ -12,7 +12,7 @@
       <Project Name="maxSum" ConfigName="Debug"/>
       <Project Name="matrixLinkMultiplication" ConfigName="Debug"/>
       <Project Name="structureOfGraph" ConfigName="Debug"/>
-      <Project Name="1_TwoSum" ConfigName="Debug"/>
+      <Project Name="findMedianOfAnArray" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="structureOfGraph" ConfigName="Release"/>
@@ -20,7 +20,7 @@
       <Project Name="maxSum" ConfigName="Release"/>
       <Project Name="matrixLinkMultiplication" ConfigName="Release"/>
       <Project Name="structureOfGraph" ConfigName="Release"/>
-      <Project Name="1_TwoSum" ConfigName="Release"/>
+      <Project Name="findMedianOfAnArray" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
