@@ -33,8 +33,8 @@
       <file leaf-file-name="Graph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1180">
-              <caret line="215" column="1" selection-start-line="215" selection-start-column="1" selection-end-line="215" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1062">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Graph#0;class#Graph#0" expanded="false" />
@@ -46,7 +46,6 @@
                 <element signature="method#explore#0;class#Graph#0" expanded="false" />
                 <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
                 <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
-                <element signature="e#3873#3881#0" expanded="true" />
                 <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
                 <element signature="method#explore#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
                 <element signature="method#explore#1;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -61,7 +60,7 @@
       <file leaf-file-name="Vertex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/Vertex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="700">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
               <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
               <folding>
                 <element signature="method#compareTo#0;class#Vertex#0" expanded="false" />
@@ -74,8 +73,8 @@
       <file leaf-file-name="SCCs.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/SCCs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.83467096" vertical-offset="180" max-vertical-offset="820">
-              <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.19905214" vertical-offset="0" max-vertical-offset="861">
+              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -99,46 +98,22 @@
       </list>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="y" value="24" />
+    <option name="width" value="1366" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
         <expanded-state>
           <State>
-            <id />
-          </State>
-          <State>
             <id>Android Lint</id>
           </State>
-          <State>
-            <id>Error handlingGroovy</id>
-          </State>
-          <State>
-            <id>Groovy</id>
-          </State>
-          <State>
-            <id>Internationalization issues</id>
-          </State>
-          <State>
-            <id>Method metrics</id>
-          </State>
-          <State>
-            <id>Potentially confusing code constructsGroovy</id>
-          </State>
-          <State>
-            <id>Threading issuesGroovy</id>
-          </State>
         </expanded-state>
-        <selected-state>
-          <State>
-            <id>Spelling</id>
-          </State>
-        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -165,6 +140,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -203,7 +179,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -216,8 +191,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="options.lastSelected" value="Errors" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
@@ -453,33 +428,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.351227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15204236" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15153733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15204236" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32361963" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.351227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32361963" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -511,6 +486,94 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="870">
+          <caret line="215" column="1" selection-start-line="215" selection-start-column="1" selection-end-line="215" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
+            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
+            <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
+            <element signature="method#Reset#0;class#Graph#0" expanded="false" />
+            <element signature="method#DFS#0;class#Graph#0" expanded="false" />
+            <element signature="method#explore#0;class#Graph#0" expanded="false" />
+            <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#explore#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#explore#1;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#Reset#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#Linearize#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#Order#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="525">
+          <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+          <folding>
+            <element signature="method#compareTo#0;class#Vertex#0" expanded="false" />
+            <element signature="method#Vertex#0;class#Vertex#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/SCCs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1060" max-vertical-offset="1180">
+          <caret line="215" column="1" selection-start-line="215" selection-start-column="1" selection-end-line="215" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
+            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
+            <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
+            <element signature="method#Reset#0;class#Graph#0" expanded="false" />
+            <element signature="method#DFS#0;class#Graph#0" expanded="false" />
+            <element signature="method#explore#0;class#Graph#0" expanded="false" />
+            <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#explore#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#explore#1;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#Reset#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#Linearize#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+            <element signature="method#Order#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="700">
+          <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+          <folding>
+            <element signature="method#compareTo#0;class#Vertex#0" expanded="false" />
+            <element signature="method#Vertex#0;class#Vertex#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/SCCs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="820">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1100">
           <caret line="186" column="1" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="1" />
           <folding>
@@ -524,7 +587,6 @@
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
-            <element signature="e#3873#3881#0" expanded="true" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#1;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -569,7 +631,6 @@
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
-            <element signature="e#3873#3881#0" expanded="true" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#1;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -614,7 +675,6 @@
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
-            <element signature="e#3873#3881#0" expanded="true" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#1;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -659,7 +719,6 @@
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
-            <element signature="e#3873#3881#0" expanded="true" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#1;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -704,7 +763,6 @@
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
-            <element signature="e#3873#3881#0" expanded="true" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#1;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -749,7 +807,6 @@
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
-            <element signature="e#3873#3881#0" expanded="true" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#1;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -779,16 +836,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/Comparable.java">
+    <entry file="file://$PROJECT_DIR$/strongConnectedComponent.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1422" max-vertical-offset="2400">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="649">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/Vertex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
           <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
           <folding>
             <element signature="method#compareTo#0;class#Vertex#0" expanded="false" />
@@ -799,8 +857,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="557" max-vertical-offset="1180">
-          <caret line="215" column="1" selection-start-line="215" selection-start-column="1" selection-end-line="215" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1062">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
@@ -812,7 +870,6 @@
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
-            <element signature="e#3873#3881#0" expanded="true" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#1;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -825,8 +882,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/SCCs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83467096" vertical-offset="180" max-vertical-offset="820">
-          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.19905214" vertical-offset="0" max-vertical-offset="861">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
           <folding />
         </state>
       </provider>
