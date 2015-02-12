@@ -24,7 +24,7 @@ public class Vertex implements Comparable<Object> {
         return "" + name;
     }
 
-    public Vertex(){
+    public Vertex() {
 
     }
 
