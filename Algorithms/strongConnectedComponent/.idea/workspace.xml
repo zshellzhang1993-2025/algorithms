@@ -33,18 +33,16 @@
       <file leaf-file-name="Graph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.80465114" vertical-offset="174" max-vertical-offset="819">
-              <caret line="215" column="1" selection-start-line="215" selection-start-column="1" selection-end-line="215" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.12093023" vertical-offset="636" max-vertical-offset="1533">
+              <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Graph#0;class#Graph#0" expanded="false" />
                 <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-                <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
                 <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
                 <element signature="method#Reset#0;class#Graph#0" expanded="false" />
                 <element signature="method#DFS#0;class#Graph#0" expanded="false" />
                 <element signature="method#explore#0;class#Graph#0" expanded="false" />
-                <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
                 <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
                 <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
                 <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -74,8 +72,8 @@
       <file leaf-file-name="SCCs.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/SCCs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="483" max-vertical-offset="861">
-              <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="861">
+              <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -520,12 +518,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -565,12 +561,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -610,12 +604,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -655,12 +647,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -700,12 +690,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -745,12 +733,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -790,12 +776,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -835,12 +819,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -880,12 +862,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -925,12 +905,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -970,12 +948,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -1015,12 +991,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -1060,12 +1034,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -1105,12 +1077,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -1150,12 +1120,10 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
@@ -1194,14 +1162,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/SCCs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="861">
-          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/Vertex.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
@@ -1213,20 +1173,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/SCCs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="861">
+          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/edu/njnu/algorithms/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80465114" vertical-offset="174" max-vertical-offset="819">
-          <caret line="215" column="1" selection-start-line="215" selection-start-column="1" selection-end-line="215" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.12093023" vertical-offset="636" max-vertical-offset="1533">
+          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#Graph#0" expanded="false" />
-            <element signature="method#Linearize#0;class#Graph#0" expanded="false" />
             <element signature="method#outputConnector#0;class#Graph#0" expanded="false" />
             <element signature="method#Reset#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#Graph#0" expanded="false" />
             <element signature="method#explore#0;class#Graph#0" expanded="false" />
-            <element signature="class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#StrongConnectedComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#nextComponent#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />
             <element signature="method#DFS#0;class#StrongConnectedComponent#0;class#Graph#0" expanded="false" />

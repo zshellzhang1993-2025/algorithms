@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ 3_LongestSubstringWithoutRepeatingCharacters - Debug ]----------"
-	@cd "3_LongestSubstringWithoutRepeatingCharacters" && $(MAKE) -f  "3_LongestSubstringWithoutRepeatingCharacters.mk"
+	@echo "----------Building project:[ 2_AddTwoNumbers - Debug ]----------"
+	@cd "2_AddTwoNumbers" && $(MAKE) -f  "2_AddTwoNumbers.mk"
 clean:
-	@echo "----------Cleaning project:[ 3_LongestSubstringWithoutRepeatingCharacters - Debug ]----------"
-	@cd "3_LongestSubstringWithoutRepeatingCharacters" && $(MAKE) -f  "3_LongestSubstringWithoutRepeatingCharacters.mk" clean
+	@echo "----------Cleaning project:[ 2_AddTwoNumbers - Debug ]----------"
+	@cd "2_AddTwoNumbers" && $(MAKE) -f  "2_AddTwoNumbers.mk" clean

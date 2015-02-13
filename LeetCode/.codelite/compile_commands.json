@@ -1,0 +1,9 @@
+[{
+  "directory": "/media/Prog/Nanjing Normal University/CS/Algorithms/LeetCode/2_AddTwoNumbers",
+  "command": "/usr/bin/g++-4.8 -g -O0 -Wall -I. -I. -MG -MP -MT./Debug/main.cpp.o -MF./Debug/main.cpp.o.d -MM main.cpp",
+  "file": "/media/Prog/Nanjing Normal University/CS/Algorithms/LeetCode/2_AddTwoNumbers/main.cpp"
+ }, {
+  "directory": "/media/Prog/Nanjing Normal University/CS/Algorithms/LeetCode/2_AddTwoNumbers",
+  "command": "/usr/bin/g++-4.8 -c \"/media/Prog/Nanjing Normal University/CS/Algorithms/LeetCode/2_AddTwoNumbers/main.cpp\" -g -O0 -Wall -o ./Debug/main.cpp.o -I. -I.",
+  "file": "/media/Prog/Nanjing Normal University/CS/Algorithms/LeetCode/2_AddTwoNumbers/main.cpp"
+ }]
