@@ -5,7 +5,7 @@ using namespace std;
  * this question wasn't solved by me,I reference someone else's code,such a hard problem!
  */
 
-class Solution {
+class Solution4 {
 public:
 	double findMedianSortedArrays ( int A[], int m, int B[], int n ) {
 		int k = m + n;
@@ -73,7 +73,7 @@ int main () {
 	int A[5] = { 1, 5, 9, 12, 25 };
 	int B[6] = { 2, 4, 7, 19, 25, 31 };
 	int C[7] = { 10, 13, 14, 21, 34, 41, 50 };
-	Solution s;
+	Solution4 s;
 	cout << s.findMedianSortedArrays ( A, 5, B, 6 ) << endl;
 	cout << s.findMedianSortedArrays ( A, 5, C, 7 );
 	return 0;

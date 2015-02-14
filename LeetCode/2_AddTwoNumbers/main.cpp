@@ -48,6 +48,24 @@ public:
 			adder1 = adder1->next;
 			adder2 = adder2->next;
 		}
+		while ( adder1 != NULL ) {
+			val = adder1->val + carry > 9 ? adder1->val + carry - 10 :
+			      adder1->val + carry;
+			carry = adder1->val + carry > 9 ? 1 : 0;
+			ListNode *node = new ListNode ( val );
+			sum->next = node;
+			sum = node;
+			adder1 = adder1->next;
+		}
+		while ( adder2 != NULL ) {
+			val = adder2->val + carry > 9 ? adder2->val + carry - 10 :
+			      adder2->val + carry;
+			carry = adder2->val + carry > 9 ? 1 : 0;
+			ListNode *node = new ListNode ( val );
+			sum->next = node;
+			sum = node;
+			adder2 = adder2->next;
+		}
 		if ( carry ) {
 			ListNode *node = new ListNode ( carry );
 			sum->next = node;
@@ -62,8 +80,8 @@ public:
 int main () {
 	Solution2 s1;
 	s1.addNumber ( 3 );
-	s1.addNumber ( 4 );
-	s1.addNumber ( 2 );
+	//s1.addNumber ( 4 );
+	//s1.addNumber ( 2 );
 	Solution2 s2;
 	s2.addNumber ( 4 );
 	s2.addNumber ( 6 );

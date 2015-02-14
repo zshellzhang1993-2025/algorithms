@@ -5,18 +5,18 @@
 ## Debug
 ProjectName            :=2_AddTwoNumbers
 ConfigurationName      :=Debug
-WorkspacePath          := "/media/Prog/Nanjing Normal University/CS/Algorithms/LeetCode"
-ProjectPath            := "/media/Prog/Nanjing Normal University/CS/Algorithms/LeetCode/2_AddTwoNumbers"
+WorkspacePath          := "F:\Nanjing Normal University\CS\Algorithms\LeetCode"
+ProjectPath            := "F:\Nanjing Normal University\CS\Algorithms\LeetCode\2_AddTwoNumbers"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=ZhangZhi
+User                   :=Zhi
 Date                   :=02/13/15
-CodeLitePath           :="/home/zhangzhi/.codelite"
-LinkerName             :=/usr/bin/g++-4.8 
-SharedObjectLinkerName :=/usr/bin/g++-4.8 -shared -fPIC
+CodeLitePath           :="C:\Program Files (x86)\CodeLite"
+LinkerName             :=C:/MinGW-4.8.1/bin/g++.exe 
+SharedObjectLinkerName :=C:/MinGW-4.8.1/bin/g++.exe -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
 PreprocessSuffix       :=.i
@@ -34,7 +34,9 @@ ArchiveOutputSwitch    :=
 PreprocessOnlySwitch   :=-E
 ObjectsFileList        :="2_AddTwoNumbers.txt"
 PCHCompileFlags        :=
-MakeDirCommand         :=mkdir -p
+MakeDirCommand         :=makedir
+RcCmpOptions           := 
+RcCompilerName         :=C:/MinGW-4.8.1/bin/windres.exe 
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
@@ -47,19 +49,20 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := /usr/bin/ar rcu
-CXX      := /usr/bin/g++-4.8 
-CC       := /usr/bin/gcc-4.8 
+AR       := C:/MinGW-4.8.1/bin/ar.exe rcu
+CXX      := C:/MinGW-4.8.1/bin/g++.exe 
+CC       := C:/MinGW-4.8.1/bin/gcc.exe 
 CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
 CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ASFLAGS  := 
-AS       := /usr/bin/as 
+AS       := C:/MinGW-4.8.1/bin/as.exe 
 
 
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=/usr/share/codelite
+CodeLiteDir:=C:\Program Files (x86)\CodeLite
+UNIT_TEST_PP_SRC_DIR:=C:\UnitTest++-1.3
 Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
 
 
@@ -79,7 +82,7 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 $(IntermediateDirectory)/.d:
-	@test -d ./Debug || $(MakeDirCommand) ./Debug
+	@$(MakeDirCommand) "./Debug"
 
 PreBuild:
 
@@ -88,7 +91,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/Prog/Nanjing Normal University/CS/Algorithms/LeetCode/2_AddTwoNumbers/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Nanjing Normal University/CS/Algorithms/LeetCode/2_AddTwoNumbers/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM "main.cpp"
 
@@ -101,6 +104,10 @@ $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 ## Clean
 ##
 clean:
-	$(RM) -r ./Debug/
+	$(RM) ./Debug/*$(ObjectSuffix)
+	$(RM) ./Debug/*$(DependSuffix)
+	$(RM) $(OutputFile)
+	$(RM) $(OutputFile).exe
+	$(RM) "../.build-debug/2_AddTwoNumbers"
 
 

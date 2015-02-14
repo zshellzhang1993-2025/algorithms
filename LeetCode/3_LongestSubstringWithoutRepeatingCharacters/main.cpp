@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Solution {
+class Solution3 {
 public:
 	int lengthOfLongestSubstring ( string s ) {
 		int max = 0;
@@ -23,7 +23,7 @@ public:
 
 int main() {
 	string s = "I wish my code will be accepted in the LeetCode";
-	Solution demo;
+	Solution3 demo;
 	cout << demo.lengthOfLongestSubstring ( s );
 	return 0;
 }
