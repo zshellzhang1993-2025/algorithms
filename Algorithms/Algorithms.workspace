@@ -4,7 +4,8 @@
   <Project Name="maxSum" Path="maxSum/maxSum.project" Active="No"/>
   <Project Name="matrixLinkMultiplication" Path="matrixLinkMultiplication/matrixLinkMultiplication.project" Active="No"/>
   <Project Name="structureOfGraph" Path="structureOfGraph/structureOfGraph.project" Active="No"/>
-  <Project Name="findMedianOfAnArray" Path="findMedianOfAnArray/findMedianOfAnArray.project" Active="Yes"/>
+  <Project Name="findMedianOfAnArray" Path="findMedianOfAnArray/findMedianOfAnArray.project" Active="No"/>
+  <Project Name="addTwoNumbersStoredByList" Path="addTwoNumbersStoredByList/addTwoNumbersStoredByList.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Project Name="structureOfGraph" ConfigName="Debug"/>
@@ -13,6 +14,7 @@
       <Project Name="matrixLinkMultiplication" ConfigName="Debug"/>
       <Project Name="structureOfGraph" ConfigName="Debug"/>
       <Project Name="findMedianOfAnArray" ConfigName="Debug"/>
+      <Project Name="addTwoNumbersStoredByList" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="structureOfGraph" ConfigName="Release"/>
@@ -21,6 +23,7 @@
       <Project Name="matrixLinkMultiplication" ConfigName="Release"/>
       <Project Name="structureOfGraph" ConfigName="Release"/>
       <Project Name="findMedianOfAnArray" ConfigName="Release"/>
+      <Project Name="addTwoNumbersStoredByList" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

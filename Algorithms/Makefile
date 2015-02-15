@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ findMedianOfAnArray - Debug ]----------"
-	@cd "findMedianOfAnArray" && $(MAKE) -f  "findMedianOfAnArray.mk"
+	@echo "----------Building project:[ addTwoNumbersStoredByList - Debug ]----------"
+	@cd "addTwoNumbersStoredByList" && $(MAKE) -f  "addTwoNumbersStoredByList.mk"
 clean:
-	@echo "----------Cleaning project:[ findMedianOfAnArray - Debug ]----------"
-	@cd "findMedianOfAnArray" && $(MAKE) -f  "findMedianOfAnArray.mk" clean
+	@echo "----------Cleaning project:[ addTwoNumbersStoredByList - Debug ]----------"
+	@cd "addTwoNumbersStoredByList" && $(MAKE) -f  "addTwoNumbersStoredByList.mk" clean
