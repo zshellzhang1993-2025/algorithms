@@ -1,7 +1,3 @@
-#include <iostream>
-#include <prioityQueue>
-using namespace std;
-
 template <class T>
 PriorityQueue<T>::PriorityQueue() {}
 
@@ -11,21 +7,35 @@ PriorityQueue<T>::PriorityQueue ( T *data, int n ) {
 }
 
 template <class T>
-PriorityQueue<T>::decreaseKey ( T data ) {
+void PriorityQueue<T>::updateKey ( T data, int index ) {		//this is the performance bottleneck of the data structure
 
 }
 
 template <class T>
-PriorityQueue<T>::deleteMin() {
+T PriorityQueue<T>::Peek() {
+	return this->heap[0];
+}
+
+template <class T>
+void PriorityQueue<T>::popMin() {
+	T min = heap[0];
+	heap[0] = heap[heap.size() - 1];
+	heap.pop_back();
+	sinkDown();
+}
+
+template <class T>
+void PriorityQueue<T>::Insert ( T data ) {
+	this->heap.push_back ( data );
+	bubbleUp();
+}
+
+template <class T>
+void PriorityQueue<T>::bubbleUp ( int index ) {
 
 }
 
 template <class T>
-PriorityQueue<T>::bubbleUp() {
-
-}
-
-template <class T>
-PriorityQueue<T>::sinkDown() {
+void PriorityQueue<T>::sinkDown() {
 
 }
