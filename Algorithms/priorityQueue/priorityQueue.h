@@ -2,24 +2,27 @@
 #define _PRIORITY_QUEUE_H
 
 #include <iostream>
-#include <prioityQueue>
 #include <vector>
 using namespace std;
 
 template <class T> class PriorityQueue {
 public:
-	PriorityQueue();
-	PriorityQueue ( T *data, int n );
-	void updateKey ( T data, int index );
+	PriorityQueue ( T *cost, int n );
+	void updateKey ( int heapIndex );
 	T Peek();
-	void popMin();
-	void Insert ( T data );
+	void Pop();
+	void Push();
+	int getHeapIndex ( int index );
 
 private:
-	void bubbleUp ( T data );
-	void sinkDown();
+	void makeSet();
+	void bubbleUp ( int index );
+	void sinkDown ( int index );
 
 private:
-	vector<T> heap;
-	int n;
-}
+	vector<int> heap;
+	vector<int> Index;
+	T *cost;
+};
+
+#endif
