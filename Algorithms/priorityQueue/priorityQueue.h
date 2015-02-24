@@ -5,24 +5,29 @@
 #include <vector>
 using namespace std;
 
-template <class T> class PriorityQueue {
+template <typename CT, typename T> class PriorityQueue {
 public:
-	PriorityQueue ( T *cost, int n );
-	void updateKey ( int heapIndex );
+	PriorityQueue();
+	PriorityQueue ( T *array, int n );
+
+	typedef void ( CT::*pClassFunc1 ) ( T );
+	void updateKey ( CT* pClassType, pClassFunc1 decreaseKey, int index );
+	void updateKey();
+
 	T Peek();
-	void Pop();
-	void Push();
-	int getHeapIndex ( int index );
+	bool Pop();
+	void Push ( T data );
+	bool isEmpty();
 
 private:
 	void makeSet();
 	void bubbleUp ( int index );
 	void sinkDown ( int index );
+	int getHeapIndex ( int index );
 
 private:
-	vector<int> heap;
-	vector<int> Index;
-	T *cost;
+	vector<T> heap;
+	vector<int> Indices;		//solve the performance bottleneck in updateKey(...)
 };
 
-#endif
+#endif	/* _PRIORITY_QUEUE_H */
