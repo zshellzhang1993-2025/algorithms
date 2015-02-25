@@ -5,15 +5,11 @@
 #include <vector>
 using namespace std;
 
-template <typename CT, typename T> class PriorityQueue {
+template <typename T> class PriorityQueue {
 public:
 	PriorityQueue();
 	PriorityQueue ( T *array, int n );
-
-	typedef void ( CT::*pClassFunc1 ) ( T );
-	void updateKey ( CT* pClassType, pClassFunc1 decreaseKey, int index );
-	void updateKey();
-
+	bool updateKey ( int index, T newData );
 	T Peek();
 	bool Pop();
 	void Push ( T data );
@@ -27,7 +23,8 @@ private:
 
 private:
 	vector<T> heap;
-	vector<int> Indices;		//solve the performance bottleneck in updateKey(...)
+	vector<int> heapIndices;		//solve the performance bottleneck in updateKey(...)
+	vector<int> entityIndices;		//cooperate with the heapIndices to get an O(1) location
 };
 
 #endif	/* _PRIORITY_QUEUE_H */
