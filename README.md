@@ -1,4 +1,4 @@
-Algorithms
+algorithms
 ==========
 
 to note down my process of learning algorithms.
