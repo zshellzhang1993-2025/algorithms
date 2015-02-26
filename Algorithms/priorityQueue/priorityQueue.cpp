@@ -1,6 +1,9 @@
 #include <priorityQueue.h>
 
 template <typename T>
+PriorityQueue<T>::PriorityQueue() {}
+
+template <typename T>
 PriorityQueue<T>::PriorityQueue ( T *array, int n ) {
 	for ( int i = 0; i < n; i++ ) {
 		this->heap.push_back ( array[i] );
@@ -74,9 +77,9 @@ void PriorityQueue<T>::bubbleUp ( int index ) {
 			entityIndices[heapIndices[index]] = entityIndices[heapIndices[parent]];
 			entityIndices[heapIndices[parent]] = indexTemp;
 
-			temp = heapIndices[index];
+			indexTemp = heapIndices[index];
 			heapIndices[index] = heapIndices[parent];
-			heapIndices[parent] = temp;
+			heapIndices[parent] = indexTemp;
 
 		} else
 			break;
@@ -102,9 +105,9 @@ void PriorityQueue<T>::sinkDown ( int index ) {
 			entityIndices[heapIndices[index]] = entityIndices[heapIndices[objectChild]];
 			entityIndices[heapIndices[objectChild]] = indexTemp;
 
-			temp = heapIndices[index];
+			indexTemp = heapIndices[index];
 			heapIndices[index] = heapIndices[objectChild];
-			heapIndices[objectChild] = temp;
+			heapIndices[objectChild] = indexTemp;
 
 		}
 		index = objectChild;
