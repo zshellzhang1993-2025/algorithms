@@ -16,75 +16,54 @@ public:
 			str.append ( 1, '#' );
 			i++;
 		}
-		this->p = new int[str.length()];
-		getLength ( str );
-		int longest = 0;
-		for ( i = 0; i < str.length(); i++ ) {
-			if ( p[i] > p[longest] )
-				longest = i;
-		}
-		longest = ( longest - 1 ) / 2;
-		int length = ( p[longest] - 2 ) / 2;
-		string result = s.substr ( longest - length, p[longest] - 1 );
-		delete[] p;
-		return result;
-	}
-
-	string findLongestPalindrome3 ( string s ) {
-		int length = s.size();
-		for ( int i = 0, k = 1; i < length - 1; i++ ) {
-			s.insert ( k, "#" );
-			k = k + 2;
-		}
-		length = length * 2 - 1;
-		int *rad = new int[length]();
-		rad[0] = 0;
-		for ( int i = 1, j = 1, k; i < length; i = i + k ) {
-			while ( i - j >= 0 && i + j < length && s.at ( i - j ) == s.at ( i + j ) )
-				j++;
-			rad[i] = j - 1;
-			for ( k = 1; k <= rad[i] && rad[i - k] != rad[i] - k; k++ )
-				rad[i + k] = min ( rad[i - k], rad[i] - k );
-
-			j = max ( j - k, 0 );
-
-		}
-		int max = 0;
-		int center;
-		for ( int i = 0; i < length; i++ ) {
-			if ( rad[i] > max ) {
-				max = rad[i];
-				center = i;
+		unsigned int *radium = new unsigned int[str.length()];
+		radium[0] = 0;
+		unsigned int currentLength = 0;
+		unsigned int offset = 1;
+		i = 1;
+		while ( i < str.length() ) {
+			while ( currentLength + i + 1 < str.length() && i >= currentLength + 1 &&
+			        str[currentLength + i + 1] == str[i - ( currentLength + 1 )] )
+				currentLength++;
+			radium[i] = currentLength;
+			while ( offset <= radium[i] ) {
+				if ( i - offset - radium[i - offset] != i - radium[i] ) {
+					radium[i + offset] = i - offset - radium[i - offset] < i - radium[i]
+					                     ? radium[i] - offset : radium[i - offset];
+					if ( offset == radium[i] ) {
+						currentLength = 0;
+						break;
+					}
+					offset++;
+				} else {
+					currentLength = radium[i - offset];
+					break;
+				}
 			}
+			i = i + offset;
+			offset = 1;
 		}
-		return s.substr ( center - max, 2 * max + 1 );
-	}
-
-private:
-	void getLength ( string str ) {
-		int i;
-		int mx = 0;
-		int id;
+		int longestRadiumIndex = 0;
 		for ( i = 0; i < str.length(); i++ ) {
-			if ( mx > i )
-				p[i] = p[2 * id - i] < mx - i ? p[2 * id - i] : mx - i;
-			else
-				p[i] = 1;
-			for ( ; str[i + p[i]] == str[i - p[i]]; p[i]++ ) {}
-			if ( p[i] + i > mx ) {
-				mx = p[i] + i;
-				id = i;
-			}
+			if ( radium[i] > radium[longestRadiumIndex] )
+				longestRadiumIndex = i;
 		}
+		string temp = str.substr ( longestRadiumIndex - radium[longestRadiumIndex],
+		                           2 * radium[longestRadiumIndex] + 1 );
+		delete[] radium;
+		string objectStr = "";
+		for ( int i = 0; i < temp.length(); i++ ) {
+			if ( temp[i] == '#' )
+				continue;
+			objectStr.append ( 1, temp[i] );
+		}
+		return objectStr;
 	}
-
-private:
-	int *p;
 };
 
 int main () {
-	string str = "madam";
+	string str = "mmdmm";
 	Solution5 s;
-	cout << s.findLongestPalindrome3 ( str );
+	cout << s.longestPalindrome ( str );
 	return 0;
 }

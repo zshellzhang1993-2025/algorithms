@@ -24,11 +24,11 @@ struct Entity {
 	}
 };
 
-class GraphForShotestPath3 {
+class GraphForMST1 {
 public:
-	GraphForShotestPath3() {}
+	GraphForMST1() {}
 
-	GraphForShotestPath3 ( char *vertex, Edge *e , int n ) {
+	GraphForMST1 ( char *vertex, Edge *e , int n ) {
 		this->n = n;
 		this->path = new int[n];
 		this->cost = new int[n];
@@ -48,7 +48,7 @@ public:
 		}
 	}
 
-	~GraphForShotestPath3() {
+	~GraphForMST1() {
 		delete[] this->vertex;
 		delete[] this->cost;
 		delete[] this->path;
@@ -166,7 +166,7 @@ int main () {
 	temp->next = ( edge + 5 )->next;
 	( edge + 5 )->next = temp;
 
-	GraphForShotestPath3 g ( vertex, edge, 6 );
+	GraphForMST1 g ( vertex, edge, 6 );
 
 	Edge *next;
 	Edge *current;
