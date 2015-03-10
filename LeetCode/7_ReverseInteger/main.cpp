@@ -22,7 +22,7 @@ public:
 		int reminder = 0;
 		while ( x > 0 ) {
 			reminder = x % 10;
-			if ( result <= 214748364 )		//judge if the current value overflow
+			if ( result <= INT_MAX % 10 )		//judge if the current value overflow
 				result = result * 10 + reminder;
 			else
 				return 0;
