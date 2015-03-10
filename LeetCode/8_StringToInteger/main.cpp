@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 
+/*
+ * such a great problem for us to think about all the posibilities.
+ * */
+
 class Solution8 {
 public:
 	int atoi ( string str ) {
