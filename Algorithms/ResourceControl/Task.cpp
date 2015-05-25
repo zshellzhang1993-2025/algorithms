@@ -30,3 +30,40 @@ public:
 private:
     int userid;
 };
+
+
+class TaskA1: Task {
+public:
+    TaskA1 ( int userid ) : Task ( userid ) {}
+
+    virtual void run() {
+        cout << "user A is runing Task 1!" << endl;
+    }
+};
+
+class TaskA2: Task {
+public:
+    TaskA2 ( int userid ) : Task ( userid ) {}
+
+    virtual void run() {
+        cout << "user A is runing Task 2!" << endl;
+    }
+};
+
+class TaskB: Task {
+public:
+    TaskB ( int userid ) : Task ( userid ) {}
+
+    virtual void run() {
+        cout << "user B is runing Task B!" << endl;
+    }
+};
+
+class TaskC: Task {
+public:
+    TaskC ( int userid ) : Task ( userid ) {}
+
+    virtual void run() {
+        cout << "user C is runing Task C!" << endl;
+    }
+};
