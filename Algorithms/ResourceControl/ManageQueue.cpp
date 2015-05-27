@@ -88,6 +88,7 @@ public:
         this->count = taskmap.size();
         this->tasks = new Task[count];
         this->occupies = new int[count];
+        this->quitCmd = '\0';
         map<Task, int>::iterator iter;
         int i = 0;
         for ( iter = taskmap.begin(); iter != taskmap.end(); iter++, i++ ) {
@@ -96,10 +97,19 @@ public:
         }
     }
 
+    ~ManageQueue() {
+        if ( tasks )
+            delete tasks;
+        if ( occupies )
+            delete occupies;
+    }
+
     void execute ( BaseQueue* queue ) {
         Task task;
         int *tags = new int[count];
         while ( 1 ) {
+            if ( quitCmd == 'q' )
+                break;
             if ( !queue->isEmpty() ) {
                 task = queue->getNextResource();
                 task.run();
@@ -117,4 +127,5 @@ private:
     Task *tasks;
     int *occupies;
     int count;
+    char quitCmd;
 };
