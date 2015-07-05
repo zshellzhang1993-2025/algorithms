@@ -46,7 +46,7 @@ private:
  * @author Zhi
  * @date 25/04/2015
  * @file ManageQueue.cpp
- * @brief
+ * @brief the middleware of the system worked as a bridge to connect BaseQueue and ManageQueue
  */
 
 class MiddleQueue {
