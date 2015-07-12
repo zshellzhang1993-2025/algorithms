@@ -12,7 +12,7 @@ using namespace std;
 
 class Solution1 {
 public:
-    int jumpFloor ( int number ) {
+    int jumpFloor1 ( int number ) {
         if ( number < 1 )
             return 0;
         else if ( number == 1 )
@@ -24,9 +24,18 @@ public:
             return result;
         }
     }
+
+    int jumpFloor2 ( int number ) {
+        if ( number <= 1 ) {
+            return 1;
+        }
+        return jumpFloorII ( number - 1 ) * 2;
+
+    }
 };
 
 int main () {
-
+    Solution1 s;
+    cout << s.jumpFloor1 ( 10 ) << endl << s.jumpFloor2 ( 10 );
     return 0;
 }
