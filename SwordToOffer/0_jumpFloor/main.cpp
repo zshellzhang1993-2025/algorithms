@@ -10,14 +10,14 @@ using namespace std;
  * for a stairs with "number" steps?
  */
 
-class Solution {
+class Solution0 {
 public:
 
     /**
      * @brief the traditional method implemented by recursion
      */
 
-    int jumpFloor ( int number ) {
+    int jumpFloor1 ( int number ) {
         if ( number == 1 )
             return 1;
         else if ( number == 2 )
@@ -25,11 +25,11 @@ public:
         else if ( number < 1 )
             return 0;
         else
-            return jumpFloor ( number - 1 ) + jumpFloor ( number - 2 );
+            return jumpFloor1 ( number - 1 ) + jumpFloor1 ( number - 2 );
     }
 
     /**
-     * @brief the problem is fundumentally the problem of Fibonacci
+     * @brief this problem is fundumentally the same as the problem of Fibonacci
      */
 
     int jumpFloor2 ( int number ) {
@@ -49,5 +49,7 @@ public:
 };
 
 int main() {
+    Solution0 s;
+    cout << s.jumpFloor1 ( 10 ) << endl << s.jumpFloor2 ( 10 );
     return 0;
 }

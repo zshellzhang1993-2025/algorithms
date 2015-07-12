@@ -31,13 +31,15 @@ private:
     int userid;
 };
 
+//the following classes are dereived from base class Task with virtual function run()
+//which can implement polymorphism in C++
 
 class TaskA1: Task {
 public:
     TaskA1 ( int userid ) : Task ( userid ) {}
 
     virtual void run() {
-        cout << "user A is runing Task 1!" << endl;
+        cout << "user A is runing Task A1!" << endl;
     }
 };
 
@@ -46,7 +48,7 @@ public:
     TaskA2 ( int userid ) : Task ( userid ) {}
 
     virtual void run() {
-        cout << "user A is runing Task 2!" << endl;
+        cout << "user A is runing Task A2!" << endl;
     }
 };
 
