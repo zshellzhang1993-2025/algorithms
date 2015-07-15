@@ -9,7 +9,7 @@ struct TreeNode {
     TreeNode ( int x ) : val ( x ), left ( NULL ), right ( NULL ) {}
 };
 
-class Solution6 {
+class Solution_6 {
 public:
     struct TreeNode* reConstructBinaryTree ( vector<int> pre, vector<int> in ) {
         if ( pre.size() == 0 )
@@ -74,7 +74,7 @@ int main() {
     int data2[8] = {4, 7, 2, 1, 5, 3, 8, 6};
     vector<int> pre ( data1, data1 + 8 );
     vector<int> in ( data2, data2 + 8 );
-    Solution6 s;
+    Solution_6 s;
     TreeNode *root = s.reConstructBinaryTree ( pre, in );
     s.postOrderTravesal ( root );
     s.deleteTree ( root );

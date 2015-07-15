@@ -10,7 +10,7 @@ using namespace std;
  * for a stairs with "number" steps?
  */
 
-class Solution1 {
+class Solution_1 {
 public:
     int jumpFloor1 ( int number ) {
         if ( number < 1 )
@@ -29,13 +29,13 @@ public:
         if ( number <= 1 ) {
             return 1;
         }
-        return jumpFloorII ( number - 1 ) * 2;
+        return jumpFloor2 ( number - 1 ) * 2;
 
     }
 };
 
 int main () {
-    Solution1 s;
+    Solution_1 s;
     cout << s.jumpFloor1 ( 10 ) << endl << s.jumpFloor2 ( 10 );
     return 0;
 }

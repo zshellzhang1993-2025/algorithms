@@ -11,7 +11,7 @@ using namespace std;
  * if the target number given is in this array
  */
 
-class Solution3 {
+class Solution_3 {
 public:
     /**
      * @brief the first method is a divide-and-conquer algorithm
@@ -150,7 +150,7 @@ int main() {
         vector<int> v ( data[i], data[i] + 4 );
         array.push_back ( v );
     }
-    Solution3 s;
+    Solution_3 s;
     cout << s.Find1 ( array, 13 );
     return 0;
 }
