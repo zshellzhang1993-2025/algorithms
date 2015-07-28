@@ -24,19 +24,31 @@ public:
             x2--;
             y2--;
         }
+        if ( x1 < x2 && y1 == y2 ) {
+            for ( int i = x1; i <= x2; i++ )
+                result.push_back ( matrix[i][y1] );
+        }
+        if ( y1 < y2 && x1 == x2 ) {
+            for ( int i = y1; i <= y2; i++ )
+                result.push_back ( matrix[x1][i] );
+        }
+        if ( x1 == x2 && y1 == y2 )
+            result.push_back ( matrix[x1][y1] );
         return result;
     }
 };
 
 int main () {
-    int array[4][3] = {
-        1,  2,   3,    4,
-        5,  6,   7,    8,
-        9, 10,  11,   12
+    int array[5][2] = {
+        1,  2,
+        3, 4,
+        5, 6,
+        7, 8,
+        9, 10
     };
     vector< vector<int> > matrix;
-    for ( int i = 0; i < 3; i++ ) {
-        vector<int> tmp ( array[i], array[i] + 4 );
+    for ( int i = 0; i < 5; i++ ) {
+        vector<int> tmp ( array[i], array[i] + 2 );
         matrix.push_back ( tmp );
     }
     Solution_12 s;
