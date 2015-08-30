@@ -50,6 +50,6 @@ public:
 
 int main() {
     Solution_0 s;
-    cout << s.jumpFloor1 ( 10 ) << endl << s.jumpFloor2 ( 10 );
+    cout << s.jumpFloor1 ( 10 ) << endl << s.jumpFloor2 ( 20 );
     return 0;
 }
