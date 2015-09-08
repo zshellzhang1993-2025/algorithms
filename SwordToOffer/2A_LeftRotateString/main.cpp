@@ -32,6 +32,6 @@ private:
 
 int main() {
     Solution_30 s;
-    cout << s.LeftRotateString ( "abcxyzdev", 13 );
+    cout << s.LeftRotateString ( "abcxyzdevC++", 13 );
     return 0;
 }
