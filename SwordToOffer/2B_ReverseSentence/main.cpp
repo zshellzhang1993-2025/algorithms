@@ -1,4 +1,7 @@
-class Solution {
+#include <iostream>
+using namespace std;
+
+class Solution_2b {
 public:
     string ReverseSentence ( string str ) {
         if ( str == "" )

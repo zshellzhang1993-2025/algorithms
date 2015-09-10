@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Solution_30 {
+class Solution_2a {
 public:
     string LeftRotateString ( string str, int n ) {
         if ( str == "" )
