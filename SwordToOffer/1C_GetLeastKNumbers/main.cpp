@@ -37,22 +37,17 @@ private:
     }
 
     void filterData ( int index ) {
-        int target = 0;
-        int childindex = 0;
-        while ( index * 2 < k + 1 ) {
-            childindex = index * 2;
-            target = data[index * 2];
-            if ( index * 2 < k && target < data[index * 2 + 1] ) {
-                target = data[index * 2 + 1];
-                childindex = childindex + 1;
-            }
-            if ( data[index] < data[childindex] ) {
-                data[childindex] = data[index];
-                data[index] = target;
-                index = childindex;
+        data[0] = data[index];
+        for ( int i = index * 2; i <= k; i *= 2 ) {
+            if ( i < k && data[i] < data[i + 1] )
+                i++;
+            if ( data[0] < data[i] ) {
+                data[index] = data[i];
+                index = i;
             } else
                 break;
         }
+        data[index] = data[0];
     }
 
 private:

@@ -31,7 +31,7 @@ private:
 };
 
 int main() {
-    Solution_30 s;
+    Solution_2a s;
     cout << s.LeftRotateString ( "abcxyzdevC++", 13 );
     return 0;
 }
