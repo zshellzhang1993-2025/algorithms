@@ -11,6 +11,8 @@ public:
             if ( str[i] < '0' || str[i] > '9' ) {
                 if ( str[i] == '-' )
                     isNegative = true;
+                else if ( str[i] == '+' )
+                    continue;
                 else {
                     isValid = false;
                     return -1;
