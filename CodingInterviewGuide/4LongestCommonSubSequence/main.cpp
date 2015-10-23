@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <set>
 #include <stack>
 #include <math.h>
 using namespace std;
@@ -8,12 +8,12 @@ struct SubStr {
     int x;
     int y;
     string str;
-    SubStr ( int xx, int yy, string str ) : x ( xx ), y ( yy ), str ( "" ) {}
+    SubStr ( int xx, int yy, string s ) : x ( xx ), y ( yy ), str ( s ) {}
     SubStr() {}
 };
 
 // do not use condition compression and create a dp array
-vector<string> longestCommonSubSequence1 ( string a, string b ) {
+set<string> longestCommonSubSequence1 ( string a, string b ) {
     //initialize dp array
     int **dp = new int*[a.size()];
     for ( unsigned int i = 0; i < a.size(); i++ )
@@ -49,36 +49,45 @@ vector<string> longestCommonSubSequence1 ( string a, string b ) {
         }
 
     //find the sub sequence
-    vector<string> result;
+    set<string> result;
     string str_tmp = "";
     stack<SubStr> tmp; //temporary intermediate stack
     SubStr s;
-    unsigned int x = a.size() - 1;
-    unsigned int y = b.size() - 1;
-    while ( !tmp.empty() || ( x != 0 && y != 0 ) ) {
-        if ( x != 0 && y != 0 ) {
+    int x = a.size() - 1;
+    int y = b.size() - 1;
+    while ( !tmp.empty() || ( x > -1 && y > -1 ) ) {
+        if ( x > 0 || y > 0 ) {
             // go to the top-left
-            if ( dp[x][y] > dp[x - 1][y] && dp[x][y] > dp[x][y - 1] ) {
+            if ( x > 0 && y > 0 && dp[x][y] > dp[x - 1][y] && dp[x][y] > dp[x][y - 1] ) {
                 str_tmp = a[x] + str_tmp;
                 x--;
                 y--;
             }
             // go to the top
-            else if ( dp[x][y] == dp[x - 1][y] ) {
+            else if ( x > 0 && dp[x][y] == dp[x - 1][y] ) {
                 if ( dp[x][y] == dp[x][y - 1] )
                     tmp.push ( SubStr ( x, y - 1, str_tmp ) );
                 x--;
             }
             // go to the left
-            else if ( dp[x][y] == dp[x][y - 1] )
+            else if ( y > 0 && dp[x][y] == dp[x][y - 1] )
                 y--;
-        } else {
-            result.push_back ( str_tmp );
-            str_tmp = "";
+        }
+        // comes to the last dp[0][0]
+        else if ( x == 0 && y == 0 ) {
+            if ( a[0] == b[0] )
+                str_tmp = a[0] + str_tmp;
+            x--;
+            y--;
+        }
+        // the current is over and pop the next
+        else {
+            result.insert ( str_tmp );
             s = tmp.top();
             tmp.pop();
             x = s.x;
             y = s.y;
+            str_tmp = s.str;
         }
     }
 
@@ -124,7 +133,9 @@ int longestCommonSubSequence2 ( string a, string b ) {
         for ( unsigned int j = 0; j < b.size(); j++ ) {
             top = dp[j];
             current = dp[j];
-            if ( j == 0  && isOne == false ) {
+            if ( j == 0 ) {
+                if ( isOne == true )
+                    continue;
                 if ( a[i] == b[j] )
                     dp[j] = 1;
                 else
@@ -145,9 +156,9 @@ int longestCommonSubSequence2 ( string a, string b ) {
 }
 
 int main () {
-    vector<string> v = longestCommonSubSequence1 ( "acbac", "abdca" );
-    for ( vector<string>::iterator iter = v.begin(); iter != v.end(); iter++ )
-        cout << *iter << '\t';
+    set<string> s = longestCommonSubSequence1 ( "acbac", "abdca" );
+    for ( set<string>::iterator iter = s.begin(); iter != s.end(); iter++ )
+        cout << *iter << endl;
     cout << endl << longestCommonSubSequence2 ( "abcac", "adbca" ) << endl;
     return 0;
 }
