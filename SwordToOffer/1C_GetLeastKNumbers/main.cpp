@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-class Solution_1c {
+class Solution_1c{
 public:
     vector<int> GetLeastNumbers_Solution ( vector<int> input, int k ) {
         this->k = k;
