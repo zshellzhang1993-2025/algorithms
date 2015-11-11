@@ -16,16 +16,23 @@ struct Vertex {
     list<Edge> inDegrees;
 };
 
+struct Topo {
+    int vertex_num;
+    bool explored;
+    Topo ( int v, bool e ) : vertex_num ( v ), explored ( e ) {}
+};
+
 class Graph {
     Vertex *vertex;
     int v_num;
-    void topologicalSort ( int v, bool visited[], vector<int> &seq );
+    bool topologicalSort ( int begin, int end, vector<int> &seq );
 
 public:
     Graph ( int v_num );
     virtual ~Graph();
     void addEdge ( int u, int v, int weight );
-    void shortestPath ( vector<char> &path );
+    bool shortestPath ( int begin, int end, vector<char> &path );
+    char getVertexName ( int num );
 };
 
 int main() {
@@ -39,16 +46,18 @@ int main() {
     g.addEdge ( 5, 2, 3 );
     g.addEdge ( 5, 4, 1 );
 
-    //int begin = 0;
-    //int end = 5;
-    //cout << "Shortest path from source " << begin << " to " << end << "\n";
+    int begin = 0;
+    int end = 5;
+    cout << "Shortest path from source " << g.getVertexName ( begin ) << " to " <<
+         g.getVertexName ( end ) << "\n";
 
     vector<char> path;
-    g.shortestPath ( path );
-
-    for ( vector<char>::iterator iter = path.begin(); iter != path.end(); iter++ )
-        cout << *iter << '\t';
-    cout << endl;
+    if ( g.shortestPath ( begin, end, path ) ) {
+        for ( vector<char>::iterator iter = path.begin(); iter != path.end(); iter++ )
+            cout << *iter << '\t';
+        cout << endl;
+    } else
+        cout << "this isn't a directed acyclic graph!" << endl;
 
     return 0;
 }
@@ -65,34 +74,78 @@ Graph::~Graph() {
     //delete vertex;
 }
 
+char Graph::getVertexName ( int num ) {
+    return vertex[num].name;
+}
+
 void Graph::addEdge ( int u, int v, int weight ) {
     Edge edge ( v, weight );
     vertex[u].inDegrees.push_back ( edge );
 }
 
-void Graph::topologicalSort ( int v, bool visited[], vector<int> &seq ) {
-    visited[v] = true;
-    for ( list<Edge>::iterator iter = vertex[v].inDegrees.begin();
-            iter != vertex[v].inDegrees.end(); iter++ ) {
-        int adjVertex = iter->vertex_num;
-        if ( !visited[adjVertex] )
-            topologicalSort ( adjVertex, visited, seq );
-    }
-    seq.push_back ( v );
-}
-
-void Graph::shortestPath ( vector<char> &path ) {
-    vector<int> seq;
-    int dist[v_num];
-    int min = 0;
+bool Graph::topologicalSort ( int begin, int end, vector<int> &seq ) {
 
     bool *visited = new bool[v_num];
     for ( int i = 0; i < v_num; i++ )
         visited[i] = false;
 
-    for ( int i = 0; i < v_num; i++ )
-        if ( visited[i] == false )
-            topologicalSort ( i, visited, seq );
+    int explore_at = -1;
+    stack<Topo> stk;
+    int current = 0;
+
+    while ( !stk.empty() || explore_at < v_num ) {
+        if ( !stk.empty() ) {
+            if ( !stk.top().explored ) {
+                current = stk.top().vertex_num;
+                stk.top().explored = true;
+                visited[current] = true;
+                for ( list<Edge>::iterator iter = vertex[current].inDegrees.begin();
+                        iter != vertex[current].inDegrees.end(); iter++ ) {
+                    if ( !visited[iter->vertex_num] )
+                        stk.push ( Topo ( iter->vertex_num, false ) );
+                    else {
+                        vector<int>::iterator it;
+                        for (  it = seq.begin(); it != seq.end(); it++ ) {
+                            if ( iter->vertex_num == *it )
+                                break;
+                        }
+                        if ( it == seq.end() )
+                            return false;
+                    }
+                }
+            } else {
+                current = stk.top().vertex_num;
+                if ( current == begin )
+                    seq.push_back ( current );
+                else if ( current == end ) {
+                    if ( !seq.size() )
+                        return false;
+                    else {
+                        seq.push_back ( current );
+                        return true;
+                    }
+                } else if ( seq.size() != 0 )
+                    seq.push_back ( current );
+                else
+                    return false;
+                stk.pop();
+            }
+        } else if ( explore_at < v_num ) {
+            explore_at++;
+            if ( !visited[explore_at] )
+                stk.push ( Topo ( explore_at, false ) );
+        }
+    }
+    return false;
+}
+
+bool Graph::shortestPath ( int begin, int end, vector<char> &path ) {
+    vector<int> seq;
+    int dist[v_num];
+    int min = 0;
+
+    if ( !topologicalSort ( begin, end, seq ) )
+        return false;
 
     for ( int i = 0; i < v_num; i++ )
         dist[i] = 0;
@@ -126,4 +179,6 @@ void Graph::shortestPath ( vector<char> &path ) {
         path.push_back ( vertex[stk.top()].name );
         stk.pop();
     }
+
+    return true;
 }
