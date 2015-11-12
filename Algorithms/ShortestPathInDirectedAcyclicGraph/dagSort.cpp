@@ -43,11 +43,11 @@ int main() {
     g.addEdge ( 1, 3, 4 );
     g.addEdge ( 4, 3, 3 );
     g.addEdge ( 4, 2, 1 );
-    g.addEdge ( 5, 2, 3 );
+    g.addEdge ( 5, 2, 4 );
     g.addEdge ( 5, 4, 1 );
 
     int begin = 0;
-    int end = 5;
+    int end = 4;
     cout << "Shortest path from source " << g.getVertexName ( begin ) << " to " <<
          g.getVertexName ( end ) << "\n";
 
@@ -57,7 +57,7 @@ int main() {
             cout << *iter << '\t';
         cout << endl;
     } else
-        cout << "this isn't a directed acyclic graph!" << endl;
+        cout << "have no shortest path!" << endl;
 
     return 0;
 }
@@ -90,31 +90,29 @@ bool Graph::topologicalSort ( int begin, int end, vector<int> &seq ) {
         visited[i] = false;
 
     int explore_at = -1;
-    stack<Topo> stk;
+    vector<Topo> stk;//just use vector to simulate stack
     int current = 0;
 
     while ( !stk.empty() || explore_at < v_num ) {
         if ( !stk.empty() ) {
-            if ( !stk.top().explored ) {
-                current = stk.top().vertex_num;
-                stk.top().explored = true;
+            if ( !stk[stk.size() - 1].explored ) {
+                current = stk[stk.size() - 1].vertex_num;
+                stk[stk.size() - 1].explored = true;
                 visited[current] = true;
                 for ( list<Edge>::iterator iter = vertex[current].inDegrees.begin();
                         iter != vertex[current].inDegrees.end(); iter++ ) {
                     if ( !visited[iter->vertex_num] )
-                        stk.push ( Topo ( iter->vertex_num, false ) );
+                        stk.push_back ( Topo ( iter->vertex_num, false ) );
                     else {
-                        vector<int>::iterator it;
-                        for (  it = seq.begin(); it != seq.end(); it++ ) {
-                            if ( iter->vertex_num == *it )
-                                break;
+                        vector<Topo>::iterator it;
+                        for (  it = stk.begin(); it != stk.end(); it++ ) {
+                            if ( iter->vertex_num == it->vertex_num )
+                                return false;
                         }
-                        if ( it == seq.end() )
-                            return false;
                     }
                 }
             } else {
-                current = stk.top().vertex_num;
+                current = stk[stk.size() - 1].vertex_num;
                 if ( current == begin )
                     seq.push_back ( current );
                 else if ( current == end ) {
@@ -126,14 +124,13 @@ bool Graph::topologicalSort ( int begin, int end, vector<int> &seq ) {
                     }
                 } else if ( seq.size() != 0 )
                     seq.push_back ( current );
-                else
-                    return false;
-                stk.pop();
+
+                stk.pop_back();
             }
         } else if ( explore_at < v_num ) {
             explore_at++;
             if ( !visited[explore_at] )
-                stk.push ( Topo ( explore_at, false ) );
+                stk.push_back ( Topo ( explore_at, false ) );
         }
     }
     return false;
@@ -148,26 +145,28 @@ bool Graph::shortestPath ( int begin, int end, vector<char> &path ) {
         return false;
 
     for ( int i = 0; i < v_num; i++ )
-        dist[i] = 0;
+        dist[i] = -1;
+    dist[seq[0]] = 0;
 
     for ( vector<int>::iterator iter = seq.begin() + 1; iter != seq.end(); iter++ ) {
         min = INT_MAX;
         for ( list<Edge>::iterator it = vertex[*iter].inDegrees.begin();
                 it != vertex[*iter].inDegrees.end(); it++ ) {
-            if ( dist[it->vertex_num] + it->weight < min )
+            if ( dist[it->vertex_num] != -1 && dist[it->vertex_num] + it->weight < min )
                 min = dist[it->vertex_num] + it->weight;
         }
         dist[*iter] = min;
     }
 
-    int target = seq[v_num - 1];
+    int target = seq[seq.size() - 1];
     stack<int> stk;
     stk.push ( target );
 
     while ( target != seq[0] ) {
         for ( list<Edge>::iterator iter = vertex[target].inDegrees.begin();
                 iter != vertex[target].inDegrees.end(); iter++ ) {
-            if ( dist[target] == dist[iter->vertex_num] + iter->weight ) {
+            if ( dist[iter->vertex_num] != -1
+                    && dist[target] == dist[iter->vertex_num] + iter->weight ) {
                 stk.push ( iter->vertex_num );
                 target = iter->vertex_num;
                 break;
