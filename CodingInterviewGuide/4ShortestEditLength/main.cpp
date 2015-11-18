@@ -133,5 +133,10 @@ int shortestEditLength2 ( string str1, string str2, int ic, int dc, int rc ) {
 }
 
 int main () {
+    vector<string> v = shortestEditLength1 ( "ab12cd3", "abcdf", 5, 3, 2 );
+    for ( vector<string>::iterator iter = v.begin(); iter != v.end(); iter++ )
+        cout << *iter << endl;
+
+    //cout << shortestEditLength2 ( "ab12cd3", "abcdf", 5, 3, 2 ) << endl;
     return 0;
 }
