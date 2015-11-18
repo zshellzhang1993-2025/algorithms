@@ -3,6 +3,11 @@
 #include <stack>
 using namespace std;
 
+const string del = "delete ";
+const string insert = "insert ";
+const string same = "the two strings have the same letter ";
+const string replace = "replace ";
+
 /**
  * @brief change str1 to str2,dynamic programming with O(n^2) space
  * @param ic:insert cost
@@ -25,9 +30,9 @@ vector<string> shortestEditLength1 ( string str1, string str2, int ic, int dc, i
         for ( unsigned int j = 1; j < str2.size() + 1; j++ ) {
             dp[i][j] = dp[i - 1][j] + dc < dp[i][j - 1] + ic ?
                        dp[i - 1][j] + dc : dp[i][j - 1] + ic;
-            if ( str1[i] == str2[j] && dp[i - 1][j - 1] < dp[i][j] ) {
-                dp[i][j] = dp[i - 1][j] + dc;
-            } else if ( str1[i] != str2[j] && dp[i - 1][j - 1] + rc < dp[i][j] )
+            if ( str1[i - 1] == str2[j - 1] && dp[i - 1][j - 1] < dp[i][j] ) {
+                dp[i][j] = dp[i - 1][j - 1];
+            } else if ( str1[i - 1] != str2[j - 1] && dp[i - 1][j - 1] + rc < dp[i][j] )
                 dp[i][j] = dp[i - 1][j - 1] + rc;
         }
 
@@ -39,24 +44,25 @@ vector<string> shortestEditLength1 ( string str1, string str2, int ic, int dc, i
     //find from the tail to the head for the path
     while ( i > 0 || j > 0 ) {
         if ( i > 0 && j > 0 ) {
-            if ( dp[i][j] + dc == dp[i - 1][j] )
-                stk.push ( "delete " + str1[i--] );
-            else if ( dp[i][j] + ic == dp[i][j - 1] )
-                stk.push ( "insert " + str2[j--] );
-            else if ( dp[i][j] == dp[i - 1][j - 1] ) {
-                stk.push ( "the two strings have the same letter " + str1[i--] );
+            if ( dp[i][j] - dc == dp[i - 1][j] )
+                stk.push ( del + str1[--i] );
+            else if ( dp[i][j] - ic == dp[i][j - 1] )
+                stk.push ( insert + str2[--j] );
+            else if ( str1[i - 1] == str2[j - 1] && dp[i][j] == dp[i - 1][j - 1] ) {
+                stk.push ( same + str1[--i] );
                 j--;
-            } else if ( dp[i][j] + rc == dp[i - 1][j - 1] ) {
-                string tmp = "replace " + str1[i--];
-                tmp = tmp + " to " + str2[j--];
+            } else if ( str1[i - 1] != str2[j - 1] && dp[i][j] - rc == dp[i - 1][j - 1] ) {
+                string tmp = replace + str1[--i];
+                tmp = tmp + " to ";
+                tmp = tmp + str2[--j];
                 stk.push ( tmp );
             }
         } else if ( i == 0 ) {
             while ( j >= 0 )
-                stk.push ( "insert " + str2[j--] );
+                stk.push ( insert + str2[--j] );
         } else if ( j == 0 ) {
             while ( i >= 0 )
-                stk.push ( "delete " + str1[i--] );
+                stk.push ( del + str1[--i] );
         }
     }
 
@@ -91,9 +97,9 @@ int shortestEditLength2 ( string str1, string str2, int ic, int dc, int rc ) {
                 } else {
                     dp[j] = dp[j] + ic < dp[j - 1] + dc ?
                             dp[j] + ic : dp[j - 1] + dc;
-                    if ( str1[j] == str2[i] && left_top < dp[j] )
+                    if ( str1[j - 1] == str2[i - 1] && left_top < dp[j] )
                         dp[j] = left_top;
-                    else if ( str1[j] != str2[i] && left_top + rc < dp[j] )
+                    else if ( str1[j - 1] != str2[i - 1] && left_top + rc < dp[j] )
                         dp[j] = left_top + rc;
                 }
                 left_top = tmp;
@@ -117,15 +123,15 @@ int shortestEditLength2 ( string str1, string str2, int ic, int dc, int rc ) {
                 } else {
                     dp[j] = dp[j - 1] + ic < dp[j] + dc ?
                             dp[j - 1] + ic : dp[j] + dc;
-                    if ( str1[i] == str2[j] && left_top < dp[j] )
+                    if ( str1[i - 1] == str2[j - 1] && left_top < dp[j] )
                         dp[j] = left_top;
-                    else if ( str1[i] != str2[j] && left_top + rc < dp[j] )
+                    else if ( str1[i - 1] != str2[j - 1] && left_top + rc < dp[j] )
                         dp[j] = left_top + rc;
                 }
                 left_top = tmp;
             }
 
-        result = dp[str1.size()];
+        result = dp[str2.size()];
         delete dp;
 
         return result;
@@ -137,6 +143,6 @@ int main () {
     for ( vector<string>::iterator iter = v.begin(); iter != v.end(); iter++ )
         cout << *iter << endl;
 
-    //cout << shortestEditLength2 ( "ab12cd3", "abcdf", 5, 3, 2 ) << endl;
+    cout << shortestEditLength2 ( "ab12cd3", "abcdf", 5, 3, 2 ) << endl;
     return 0;
 }
