@@ -1,7 +1,8 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-//complete backpack problem
+// complete backpack problem
 vector<int> leastNumberOfMoneyChange1 ( int array[], int n, int aim ) {
     int *dp = new int[aim + 1];
 
@@ -18,11 +19,21 @@ vector<int> leastNumberOfMoneyChange1 ( int array[], int n, int aim ) {
     }
 
     vector<int> v ( dp[aim] );
-    while ( 1 ) {
-
+    int current = dp[aim] - 1;
+    int target = aim;
+    while ( target > 0 ) {
+        for ( int i = 0; i < n; i++ ) {
+            if ( dp[target] - 1 == dp[target - array[i]] ) {
+                v[current] = array[i];
+                current--;
+                target = target - array[i];
+                break;
+            }
+        }
     }
 
     delete dp;
+    return v;
 }
 
 // 0/1 backpack problem
