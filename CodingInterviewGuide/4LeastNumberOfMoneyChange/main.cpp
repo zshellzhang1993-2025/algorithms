@@ -9,7 +9,7 @@ vector<int> leastNumberOfMoneyChange1 ( int array[], int n, int aim ) {
 
     dp[0] = 0;
     for ( int i = 1; i < aim + 1; i++ )
-        dp[i] = INT_MAX;
+        dp[i] = INT_MAX - 1;
 
     for ( int i = 1; i < aim + 1; i++ ) {
         for ( int j = 0; j < n; j++ ) {
@@ -57,7 +57,7 @@ vector<int> leastNumberOfMoneyChange2 ( int array[], int n, int aim ) {
                 dp[i][j] = dp[i - 1][j];
         }
 
-    vector<int> result;
+    vector<int> result ( dp[n - 1][aim] );
     int current = dp[n - 1][aim] - 1;
     int target = aim;
     int index = n;
@@ -117,5 +117,17 @@ int leastNumberOfMoneyChange3 ( int array[], int n, int aim ) {
 }
 
 int main () {
+    int array1[3] = {5, 2, 3};
+    vector<int> result = leastNumberOfMoneyChange1 ( array1, 3, 10 );
+    for ( vector<int>::iterator iter = result.begin(); iter != result.end(); iter++ )
+        cout << *iter << " ";
+    cout << endl;
+    int array2[4] = {5, 2, 3, 5};
+    result = leastNumberOfMoneyChange2 ( array2, 4, 10 );
+    for ( vector<int>::iterator iter = result.begin(); iter != result.end(); iter++ )
+        cout << *iter << " ";
+    cout << endl;
+    cout << leastNumberOfMoneyChange3 ( array2, 4, 10 );
+    cout << endl;
     return 0;
 }
