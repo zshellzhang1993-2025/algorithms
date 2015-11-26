@@ -38,7 +38,7 @@ vector<int> leastNumberOfMoneyChange1 ( int array[], int n, int aim ) {
 
 // 0/1 backpack problem without condition compress
 vector<int> leastNumberOfMoneyChange2 ( int array[], int n, int aim ) {
-    int **dp = new int*[n - 1];
+    int **dp = new int*[n];
     for ( int i = 0; i < n; i++ )
         dp[i] = new int[aim + 1];
 
@@ -49,7 +49,7 @@ vector<int> leastNumberOfMoneyChange2 ( int array[], int n, int aim ) {
     if ( array[0] <= aim )
         dp[0][array[0]] = 1;
 
-    for ( int i = 1; i < n - 1; i++ )
+    for ( int i = 1; i < n; i++ )
         for ( int j = 1; j < aim + 1; j++ ) {
             if ( j >= array[i] && dp[i - 1][j - array[i]] + 1 < dp[i - 1][j] )
                 dp[i][j] = dp[i - 1][j - array[i]] + 1;
@@ -63,9 +63,10 @@ vector<int> leastNumberOfMoneyChange2 ( int array[], int n, int aim ) {
     int index = n;
     while ( target > 0 ) {
         index--;
-        if ( dp[index][target] == dp[index - 1][target] ) {
-            result[current] = array[index];
-            current--;
+        if ( index == 0 ) {
+            if ( dp[0][target] == 1 && target == array[0] )
+                result[current] = array[0];
+            break;
         }
         if ( dp[index][target] - 1 == dp[index - 1][target - array[index]] ) {
             result[current] = array[index];
@@ -93,12 +94,14 @@ int leastNumberOfMoneyChange3 ( int array[], int n, int aim ) {
         dp[0][array[0]] = 1;
 
     for ( int i = 1; i < n - 1; i++ ) {
-        for ( int k = 0; k < aim; k++ )
-            dp[1][k] = dp[0][k];
         for ( int j = 0; j < aim + 1; j++ ) {
             if ( j >= array[i] && dp[0][j - array[i]] + 1 < dp[0][j] )
-                dp[0][j] = dp[0][j - array[i]];
+                dp[1][j] = dp[0][j - array[i]] + 1;
+            else
+                dp[1][j] = dp[0][j];
         }
+        for ( int j = 0; j < aim; j++ )
+            dp[0][j] = dp[1][j];
     }
 
     //the last row does not need to be all-element calculated at all
