@@ -124,7 +124,7 @@ int leastNumberOfMoneyChange3 ( int array[], int n, int aim ) {
     return result == INT_MAX - 1 ? -1 : result;
 }
 
-// multi backpack problem
+// multi-copy backpack problem
 vector<int> leastNumberOfMoneyChange4 ( int array[], int n, int aim ) {
 
 }
