@@ -124,9 +124,41 @@ int leastNumberOfMoneyChange3 ( int array[], int n, int aim ) {
     return result == INT_MAX - 1 ? -1 : result;
 }
 
-// multi-copy backpack problem
-vector<int> leastNumberOfMoneyChange4 ( int array[], int n, int aim ) {
+// multi-copy backpack problem with condtion compress
+int leastNumberOfMoneyChange4 ( int array[], int amount[], int n, int aim ) {
+    int *dp = new int[aim + 1];
 
+    int k = 0;
+    dp[0] = 0;
+    for ( int i = 1; i < aim + 1; i++ ) {
+        if ( i % array[0] == 0 && k < amount[0] ) {
+            dp[i] = i / array[0];
+            k++;
+        } else
+            dp[i] = INT_MAX / 2;
+    }
+
+    for ( int i = 1; i < n - 1; i++ )
+        for ( int j = aim; j >= 0; j-- ) {
+            k = 0;
+            while ( j >= k * array[i] && k <= amount[i] ) {
+                if ( dp[j - k * array[i]] + k < dp[j] )
+                    dp[j] = dp[j - k * array[i]] + k;
+                k++;
+            }
+        }
+
+    k = 0;
+    while ( aim >= k * array[n - 1] && k <= amount[n - 1] ) {
+        if ( dp[aim - k * array[n - 1]] + k < dp[aim] )
+            dp[aim] = dp[aim - k * array[n - 1]] + k;
+        k++;
+    }
+
+    int result = dp[aim];
+    delete dp;
+
+    return result == INT_MAX / 2 ? -1 : result;
 }
 
 int main () {
@@ -141,6 +173,9 @@ int main () {
         cout << *iter << " ";
     cout << endl;
     cout << leastNumberOfMoneyChange3 ( array2, 4, 12 );
+    cout << endl;
+    int amount[3] = {1, 4, 1};
+    cout << leastNumberOfMoneyChange4 ( array1, amount, 3, 14 );
     cout << endl;
     return 0;
 }
