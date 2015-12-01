@@ -11,10 +11,10 @@ vector<int> leastNumberOfMoneyChange1 ( int array[], int n, int aim ) {
     for ( int i = 1; i < aim + 1; i++ )
         dp[i] = INT_MAX - 1;
 
-    for ( int i = 1; i < aim + 1; i++ ) {
-        for ( int j = 0; j < n; j++ ) {
-            if ( i >= array[j] && dp[i - array[j]] + 1 < dp[i] )
-                dp[i] = dp[i - array[j]] + 1;
+    for ( int i = 1; i < n; i++ ) {
+        for ( int j = 0; j < aim + 1; j++ ) {
+            if ( j >= array[i] && dp[j - array[i]] + 1 < dp[j] )
+                dp[j] = dp[j - array[i]] + 1;
         }
     }
 
