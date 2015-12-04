@@ -154,11 +154,44 @@ TreeNode* shortestCostBST ( string name[], int cost[], int n ) {
     return root;
 }
 
-void inOrder ( TreeNode *node ) {
-    if ( node != NULL ) {
-        inOrder ( node->left );
-        cout << node->name << " ";
-        inOrder ( node->right );
+TreeNode* findPrev ( TreeNode *node ) {
+    if ( !node )
+        return NULL;
+    TreeNode *leftchild = node->left;
+    if ( !leftchild )
+        return NULL;
+    if ( !leftchild->right )
+        return leftchild;
+    else {
+        TreeNode *rightchild = leftchild->right;
+        while ( rightchild && rightchild != node ) {
+            leftchild = rightchild;
+            rightchild = leftchild->right;
+        }
+        return leftchild;
+    }
+}
+
+void morrisInOrder ( TreeNode *node ) {
+    while ( true ) {
+        while ( node && node->left ) {
+            TreeNode *pre = findPrev ( node );
+            pre->right = node;
+            node = node->left;
+        }
+        while ( node && node == findPrev ( node->right ) ) {
+            cout << node->name << " ";
+            TreeNode *next = node->right;
+            node->right = NULL;
+            node = next;
+        }
+        if ( node ) {
+            cout << node->name << " ";
+            node = node->right;
+        } else {
+            cout << endl;
+            break;
+        }
     }
 }
 
@@ -167,6 +200,6 @@ int main () {
     string name[7] = {"begin", "do", "else", "end", "if", "then", "while"};
     cout << shortestCostBST ( cost, 7 ) << endl;
     TreeNode *node = shortestCostBST ( name, cost, 7 );
-    inOrder ( node );
+    morrisInOrder ( node );
     return 0;
 }
