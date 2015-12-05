@@ -154,12 +154,14 @@ TreeNode* shortestCostBST ( string name[], int cost[], int n ) {
     return root;
 }
 
+/**
+ * @brief Morris Order free of recursion with O(n) time && O(1) space
+ */
+
 TreeNode* findPrev ( TreeNode *node ) {
-    if ( !node )
+    if ( !node || !node->left )
         return NULL;
     TreeNode *leftchild = node->left;
-    if ( !leftchild )
-        return NULL;
     if ( !leftchild->right )
         return leftchild;
     else {
@@ -179,16 +181,46 @@ void morrisInOrder ( TreeNode *node ) {
             pre->right = node;
             node = node->left;
         }
-        while ( node && node == findPrev ( node->right ) ) {
+        while ( node ) {
             cout << node->name << " ";
             TreeNode *next = node->right;
-            node->right = NULL;
-            node = next;
+            if ( node == findPrev ( next ) ) {
+                node->right = NULL;
+                node = next;
+            } else {
+                node = next;
+                break;
+            }
         }
-        if ( node ) {
+        if ( !node ) {
+            cout << endl;
+            break;
+        }
+    }
+}
+
+void morrisPreOrder ( TreeNode *node ) {
+    while ( true ) {
+        while ( node ) {
             cout << node->name << " ";
-            node = node->right;
-        } else {
+            if ( node->left ) {
+                TreeNode *pre = findPrev ( node );
+                pre->right = node;
+                node = node->left;
+            } else
+                break;
+        }
+        while ( node ) {
+            TreeNode *next = node->right;
+            if ( node == findPrev ( next ) ) {
+                node->right = NULL;
+                node = next;
+            } else {
+                node = next;
+                break;
+            }
+        }
+        if ( !node ) {
             cout << endl;
             break;
         }
@@ -201,5 +233,6 @@ int main () {
     cout << shortestCostBST ( cost, 7 ) << endl;
     TreeNode *node = shortestCostBST ( name, cost, 7 );
     morrisInOrder ( node );
+    morrisPreOrder ( node );
     return 0;
 }
