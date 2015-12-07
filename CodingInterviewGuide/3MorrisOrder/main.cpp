@@ -4,20 +4,12 @@ using namespace std;
 struct TreeNode {
     TreeNode *left;
     TreeNode *right;
-    int value;
-    TreeNode ( int v ) : value ( v ) {}
+    char value;
+    TreeNode ( char v ) : value ( v ), left ( NULL ), right ( NULL ) {}
 };
 
-TreeNode* unSerialize ( string sequence ) {
-
-}
-
-void Serialize ( TreeNode *node ) {
-
-}
-
 /**
- * @brief Morris Order free of recursion with O(n) time && O(1) space
+ * @brief Morris Traversal free of recursion with O(n) time && O(1) space
  */
 
 TreeNode* findPrev ( TreeNode *node ) {
@@ -90,6 +82,67 @@ void morrisPreOrder ( TreeNode *node ) {
 }
 
 void morrisSubOrder ( TreeNode *node ) {
+
+}
+
+/**
+ * @brief a serial of operations based on the above morris traversal
+ */
+
+TreeNode* unSerialize ( string sequence ) {
+    string::iterator iter = sequence.begin();
+    TreeNode *current = new TreeNode ( *iter );
+    TreeNode *child;
+    for (  iter++; iter != sequence.end(); iter++ ) {
+        if ( *iter != '#' ) {
+            child = new TreeNode ( *iter );
+            if ( * ( iter - 1 ) == '#' && * ( iter - 2 ) == '#' )
+                current->right = child;
+            else
+                current->left = child;
+            child->right = iter;
+            current = child;
+        } else if ( * ( iter - 1 ) == '#' ) {
+            current = child->right;
+            child->right = NULL;
+        }
+    }
+}
+
+string Serialize ( TreeNode *node ) {
+    string result = "";
+    while ( true ) {
+        while ( node ) {
+            result.append ( 1, node->value );
+            if ( node->left ) {
+                TreeNode *pre = findPrev ( node );
+                pre->right = node;
+                node = node->left;
+            } else {
+                result.append ( 1, '#' );
+                break;
+            }
+        }
+        while ( node ) {
+            TreeNode *next = node->right;
+            if ( node == findPrev ( next ) ) {
+                result.append ( 1, '#' );
+                node->right = NULL;
+                node = next;
+            } else {
+                node = next;
+                break;
+            }
+        }
+        if ( !node ) {
+            cout << endl;
+            break;
+        }
+    }
+    return result;
+}
+
+void Free ( TreeNode *node ) {
 
 }
 
