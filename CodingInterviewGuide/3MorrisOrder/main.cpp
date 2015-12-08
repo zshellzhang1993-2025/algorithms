@@ -2,9 +2,9 @@
 using namespace std;
 
 struct TreeNode {
+    char value;
     TreeNode *left;
     TreeNode *right;
-    char value;
     TreeNode ( char v ) : value ( v ), left ( NULL ), right ( NULL ) {}
 };
 
@@ -82,7 +82,54 @@ void morrisPreOrder ( TreeNode *node ) {
 }
 
 void morrisSubOrder ( TreeNode *node ) {
-
+    TreeNode *tmp;
+    TreeNode *next;
+    TreeNode *father;
+    bool canPrint = false;
+    while ( true ) {
+        while ( node && node->left && !canPrint ) {
+            TreeNode *pre = findPrev ( node );
+            pre->right = node;
+            node = node->left;
+        }
+        while ( ( node && !node->left ) || canPrint ) {
+            canPrint = false;
+            TreeNode *next = node->right;
+            if ( node == findPrev ( next ) || !next ) {
+                if ( node ) {
+                    node->right = NULL;
+                    node = next->left;
+                }
+                father = next;
+                canPrint = true;
+                break;
+            }
+            node = next;
+        }
+        if ( canPrint ) {
+            tmp = NULL;
+            while ( node ) {
+                next = node->right;
+                node->right = tmp;
+                tmp = node;
+                node = next;
+            }
+            node = tmp;
+            tmp = NULL;
+            while ( node ) {
+                cout << node->value << " ";
+                next = node->right;
+                node->right = tmp;
+                tmp = node;
+                node = next;
+            }
+            node = father;
+        }
+        if ( !father ) {
+            cout << endl;
+            break;
+        }
+    }
 }
 
 /**
@@ -139,7 +186,8 @@ string Serialize ( TreeNode *node ) {
             }
         }
         if ( !node ) {
-            cout << endl;
+            result.append ( 1, '#' );
+            //cout << endl;
             break;
         }
     }
@@ -151,9 +199,13 @@ void Free ( TreeNode *node ) {
 }
 
 int main () {
-    TreeNode *root = unSerialize ( "124##58##9##36##7##" );
+    string s1 = "124##58##9##36##7##";
+    string s2 = "12#58##9##36###";
+    TreeNode *root = unSerialize ( s1 );
     morrisInOrder ( root );
     morrisPreOrder ( root );
+    morrisSubOrder ( root );
     cout << Serialize ( root ) << endl;
+    Free ( root );
     return 0;
 }
