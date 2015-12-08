@@ -92,21 +92,25 @@ void morrisSubOrder ( TreeNode *node ) {
 TreeNode* unSerialize ( string sequence ) {
     string::iterator iter = sequence.begin();
     TreeNode *current = new TreeNode ( *iter );
+    TreeNode *root = current;
     TreeNode *child;
     for (  iter++; iter != sequence.end(); iter++ ) {
         if ( *iter != '#' ) {
             child = new TreeNode ( *iter );
-            if ( * ( iter - 1 ) == '#' && * ( iter - 2 ) == '#' )
+            if ( * ( iter - 1 ) == '#' ) {
+                child->right = current->right;
                 current->right = child;
-            else
+            } else {
                 current->left = child;
-            child->right = iter;
+                child->right = current;
+            }
             current = child;
         } else if ( * ( iter - 1 ) == '#' ) {
             current = child->right;
             child->right = NULL;
         }
     }
+    return root;
 }
 
 string Serialize ( TreeNode *node ) {
@@ -147,5 +151,9 @@ void Free ( TreeNode *node ) {
 }
 
 int main () {
+    TreeNode *root = unSerialize ( "124##58##9##36##7##" );
+    morrisInOrder ( root );
+    morrisPreOrder ( root );
+    cout << Serialize ( root ) << endl;
     return 0;
 }
