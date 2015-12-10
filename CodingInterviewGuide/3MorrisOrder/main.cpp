@@ -85,6 +85,7 @@ void morrisSubOrder ( TreeNode *node ) {
     TreeNode *tmp;
     TreeNode *next;
     TreeNode *father;
+    TreeNode *root = node;
     bool canPrint = false;
     while ( true ) {
         while ( node && node->left && !canPrint ) {
@@ -96,10 +97,11 @@ void morrisSubOrder ( TreeNode *node ) {
             canPrint = false;
             TreeNode *next = node->right;
             if ( node == findPrev ( next ) || !next ) {
-                if ( node ) {
+                if ( next ) {
                     node->right = NULL;
                     node = next->left;
-                }
+                } else
+                    node = root;
                 father = next;
                 canPrint = true;
                 break;
@@ -201,7 +203,7 @@ void Free ( TreeNode *node ) {
 int main () {
     string s1 = "124##58##9##36##7##";
     string s2 = "12#58##9##36###";
-    TreeNode *root = unSerialize ( s1 );
+    TreeNode *root = unSerialize ( s2 );
     morrisInOrder ( root );
     morrisPreOrder ( root );
     morrisSubOrder ( root );
