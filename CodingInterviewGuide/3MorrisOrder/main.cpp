@@ -189,7 +189,6 @@ string Serialize ( TreeNode *node ) {
         }
         if ( !node ) {
             result.append ( 1, '#' );
-            //cout << endl;
             break;
         }
     }
@@ -197,13 +196,59 @@ string Serialize ( TreeNode *node ) {
 }
 
 void Free ( TreeNode *node ) {
-
+    TreeNode *tmp;
+    TreeNode *next;
+    TreeNode *father;
+    TreeNode *root = node;
+    bool canPrint = false;
+    while ( true ) {
+        while ( node && node->left && !canPrint ) {
+            TreeNode *pre = findPrev ( node );
+            pre->right = node;
+            node = node->left;
+        }
+        while ( ( node && !node->left ) || canPrint ) {
+            canPrint = false;
+            TreeNode *next = node->right;
+            if ( node == findPrev ( next ) || !next ) {
+                if ( next ) {
+                    node->right = NULL;
+                    node = next->left;
+                } else
+                    node = root;
+                father = next;
+                canPrint = true;
+                break;
+            }
+            node = next;
+        }
+        if ( canPrint ) {
+            tmp = NULL;
+            while ( node ) {
+                next = node->right;
+                node->right = tmp;
+                tmp = node;
+                node = next;
+            }
+            node = tmp;
+            tmp = NULL;
+            while ( node ) {
+                next = node->right;
+                delete node;
+                node = next;
+            }
+            node = father;
+        }
+        if ( !father ) {
+            break;
+        }
+    }
 }
 
 int main () {
     string s1 = "124##58##9##36##7##";
     string s2 = "12#58##9##36###";
-    TreeNode *root = unSerialize ( s2 );
+    TreeNode *root = unSerialize ( s1 );
     morrisInOrder ( root );
     morrisPreOrder ( root );
     morrisSubOrder ( root );
